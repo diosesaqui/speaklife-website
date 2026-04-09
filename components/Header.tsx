@@ -15,8 +15,8 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-10 text-sm text-white/70">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <Link href="/faq" className="hover:text-white transition-colors">About</Link>
-          <Link href="/best-christian-affirmation-app" className="hover:text-white transition-colors">Features</Link>
-          <Link href="/faq" className="hover:text-white transition-colors">Privacy</Link>
+          <Link href="/features" className="hover:text-white transition-colors">Features</Link>
+          <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
         </nav>
 
         <button onClick={() => setOpen(!open)} className="md:hidden p-2">
@@ -30,8 +30,8 @@ export default function Header() {
         <div className="md:hidden bg-[#0a1f1f]/95 backdrop-blur px-8 py-6 flex flex-col gap-5 text-white text-sm font-medium">
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
           <Link href="/faq" onClick={() => setOpen(false)}>About</Link>
-          <Link href="/best-christian-affirmation-app" onClick={() => setOpen(false)}>Features</Link>
-          <Link href="/faq" onClick={() => setOpen(false)}>Privacy</Link>
+          <Link href="/features" onClick={() => setOpen(false)}>Features</Link>
+          <Link href="/privacy" onClick={() => setOpen(false)}>Privacy</Link>
         </div>
       )}
     </header>
