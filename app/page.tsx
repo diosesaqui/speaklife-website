@@ -23,9 +23,40 @@ const testimonials = [
   { quote: "As a busy mom I don't have an hour for devotionals. SpeakLife gives me 2 minutes of faith that carries me through the whole day.", author: "Rachel D." },
 ];
 
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SpeakLife",
+  "operatingSystem": "iOS",
+  "applicationCategory": "LifestyleApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "10.00",
+    "priceCurrency": "USD",
+    "priceSpecification": [
+      { "@type": "UnitPriceSpecification", "price": "10.00", "priceCurrency": "USD", "unitText": "MONTH" },
+      { "@type": "UnitPriceSpecification", "price": "50.00", "priceCurrency": "USD", "unitText": "YEAR" }
+    ]
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2400", "bestRating": "5" },
+  "description": "SpeakLife is a Christian iOS app that helps you speak Scripture-based declarations daily to overcome anxiety, build confidence, and grow your faith.",
+  "url": "https://apps.apple.com/us/app/speaklife/id1617492998",
+  "publisher": { "@type": "Organization", "name": "DIOSESTAAQUI LLC" }
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SpeakLife",
+  "url": "https://www.speaklifebibleaffirmations.com",
+  "sameAs": ["https://apps.apple.com/us/app/speaklife/id1617492998"]
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <Header />
       <main>
 
