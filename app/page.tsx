@@ -18,18 +18,9 @@ const categories = [
 ];
 
 const testimonials = [
-  { quote: "I've tried every Bible app out there. SpeakLife is the only one that actually changed how I start my day. Speaking the declarations out loud feels different — more powerful.", author: "Sarah M." },
-  { quote: "I was waking up at 3am with anxiety every night. After two weeks of morning declarations, I sleep through the night. God's Word is working.", author: "Keisha T." },
+  { quote: "I've tried every Bible app. SpeakLife is the only one that actually changed how I start my day. Speaking the declarations out loud feels different — more powerful.", author: "Sarah M." },
+  { quote: "I was waking up at 3am with anxiety. After two weeks of morning declarations, I sleep through the night. God's Word is working.", author: "Keisha T." },
   { quote: "As a busy mom I don't have an hour for devotionals. SpeakLife gives me 2 minutes of faith that carries me through the whole day.", author: "Rachel D." },
-];
-
-const features = [
-  { emoji: "📖", title: "Daily Declarations", desc: "Fresh Scripture-based declarations every morning. Written clearly so you can speak with confidence." },
-  { emoji: "🎧", title: "Audio Devotionals", desc: "Listen and speak along. Perfect for morning routines, commutes, or quiet moments mid-day." },
-  { emoji: "🔔", title: "Daily Reminders", desc: "Push notifications keep you consistent. The most powerful declarations are the ones you actually say." },
-  { emoji: "✝️", title: "6 Life Categories", desc: "Anxiety. Joy. Destiny. Wisdom. Identity. Confidence. Every area of life covered by God's Word." },
-  { emoji: "📱", title: "Bible Verses", desc: "Every declaration is rooted in Scripture. You always know where it comes from and why it carries power." },
-  { emoji: "✍️", title: "Create Your Own", desc: "Write your own personalized declarations on top of our library. Make your practice fully yours." },
 ];
 
 export default function Home() {
@@ -37,165 +28,143 @@ export default function Home() {
     <>
       <Header />
       <main>
-        {/* Hero */}
-        <section className="hero-bg min-h-screen flex items-center pt-16">
-          <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm px-4 py-2 rounded-full mb-8">
-                <span>⭐⭐⭐⭐⭐</span>
-                <span>Rated 4.9 on the App Store</span>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-black text-white leading-[1.1] mb-6">
-                Speak God's Word.<br />
-                <span className="gold-gradient">Change Your Life.</span>
-              </h1>
-              <p className="text-white/75 text-lg leading-relaxed mb-10 max-w-md">
-                SpeakLife gives you Scripture-based declarations to speak over your life every morning. Beat anxiety, find your identity, walk in purpose — 2 minutes a day.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://apps.apple.com/us/app/speaklife/id1617492998"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#c9a84c] text-[#1a2744] font-bold text-base px-8 py-4 rounded-full hover:bg-[#e8c96a] transition-all hover:scale-105"
-                >
-                  Download Free on iOS →
-                </a>
-                <Link
-                  href="/faq"
-                  className="border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  Learn More
-                </Link>
-              </div>
-              <p className="text-white/40 text-sm mt-5">3-day free trial · $10/mo or $50/yr · iOS only</p>
-            </div>
 
-            {/* Phone Mockup */}
-            <div className="flex justify-center">
-              <div className="relative w-72 h-[560px]">
-                {/* Phone frame */}
-                <div className="absolute inset-0 bg-[#0d1b2e] rounded-[44px] border-4 border-white/20 shadow-2xl overflow-hidden">
-                  {/* Status bar */}
-                  <div className="bg-[#0d1b2e] h-10 flex items-center justify-between px-8 pt-2">
-                    <span className="text-white/60 text-xs font-medium">9:41</span>
-                    <div className="w-24 h-5 bg-black rounded-full"></div>
-                    <div className="flex gap-1">
-                      <div className="w-4 h-2 bg-white/60 rounded-sm"></div>
-                    </div>
-                  </div>
-                  {/* App content */}
-                  <div className="bg-gradient-to-b from-[#1a2744] to-[#0d1420] h-full px-6 pt-6 pb-10 flex flex-col items-center">
-                    <div className="text-white/60 text-xs uppercase tracking-widest mb-2">Daily Declaration</div>
-                    <div className="text-[#c9a84c] text-xs font-semibold mb-6">IDENTITY</div>
-                    <div className="bg-white/8 rounded-2xl p-5 mb-6 text-center border border-white/10">
-                      <p className="text-white text-base leading-relaxed font-medium italic">
-                        "I am not defined by my past. God says I am a new creation. I walk in that truth today."
-                      </p>
-                      <p className="text-white/40 text-xs mt-3">2 Corinthians 5:17</p>
-                    </div>
-                    <button className="bg-[#c9a84c] text-[#1a2744] font-bold text-sm px-8 py-3 rounded-full w-full">
-                      Speak This Declaration
-                    </button>
-                    <div className="flex gap-6 mt-6">
-                      {["😰","😊","🎯","🧠","👑","💪"].map((e, i) => (
-                        <div key={i} className="text-xl">{e}</div>
-                      ))}
-                    </div>
-                  </div>
+        {/* ── HERO ── */}
+        <section className="hero-water min-h-screen flex flex-col items-center justify-center relative pt-16" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
+            <h1
+              className="text-white leading-none mb-8 animate-fade-up"
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: "clamp(5rem, 18vw, 14rem)",
+                fontWeight: 900,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                lineHeight: 0.9,
+              }}
+            >
+              SPEAK<br />LIFE
+            </h1>
+
+            <p className="text-white/70 text-base md:text-lg max-w-md leading-relaxed mb-10 animate-fade-up delay-1">
+              Experience the power of daily devotionals and Bible affirmations through the SpeakLife App. Start using your weapons that God gave you and join us on this spiritual journey today!
+            </p>
+
+            <a
+              href="https://apps.apple.com/us/app/speaklife/id1617492998"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="animate-fade-up delay-2"
+            >
+              <div className="bg-black text-white flex items-center gap-3 px-7 py-3.5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div className="text-left">
+                  <div className="text-xs text-white/60 leading-none">Download on the</div>
+                  <div className="text-base font-semibold leading-tight">App Store</div>
                 </div>
-                {/* Glow */}
-                <div className="absolute inset-0 rounded-[44px] bg-[#c9a84c]/10 blur-2xl scale-105 -z-10"></div>
+              </div>
+            </a>
+          </div>
+
+          {/* Subtle bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
+        </section>
+
+        {/* ── ABOUT / PHONE MOCKUPS ── */}
+        <section className="py-24 px-6 bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+            {/* Left */}
+            <div className="max-w-sm">
+              <div className="w-14 h-14 rounded-2xl mb-8 overflow-hidden shadow-lg"
+                style={{ background: "linear-gradient(135deg, #5b8dee, #3b6fd4)" }}>
+                <div className="w-full h-full flex items-center justify-center text-2xl">✝️</div>
+              </div>
+
+              <h2
+                className="text-4xl md:text-5xl text-[#1a1a1a] mb-6 leading-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase" }}
+              >
+                SPEAK<br />GOD'S<br />WORD.
+              </h2>
+
+              <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                SpeakLife is an innovative Bible affirmation app designed to deepen your understanding of Jesus' profound love and His desire for a personal relationship with you. In the midst of life's storms, SpeakLife serves as a beacon of divine love — offering daily declarations of Jesus' presence and unwavering affection through Scripture.
+              </p>
+
+              <a
+                href="https://apps.apple.com/us/app/speaklife/id1617492998"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border border-gray-300 text-gray-700 text-sm px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors tracking-wide"
+              >
+                Download
+              </a>
+            </div>
+
+            {/* Right — Phone mockups */}
+            <div className="relative flex justify-center items-end gap-4 h-[480px]">
+              {/* Phone 1 */}
+              <div className="phone-shadow relative w-44 h-[380px] rounded-[32px] overflow-hidden border-4 border-gray-800 bg-[#0a1f1f] flex-shrink-0 translate-y-8">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#1a3535] to-[#0a1515]"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                  <p className="text-white text-xs font-medium italic leading-relaxed">
+                    "I trample upon lions and cobras and crush them under my feet."
+                  </p>
+                  <p className="text-white/40 text-xs mt-3">Psalm 91:13</p>
+                </div>
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-6">
+                  <div className="w-5 h-5 rounded-full bg-white/20"></div>
+                  <div className="w-5 h-5 rounded-full bg-white/20"></div>
+                </div>
+              </div>
+
+              {/* Phone 2 */}
+              <div className="phone-shadow relative w-44 h-[380px] rounded-[32px] overflow-hidden border-4 border-gray-800 bg-[#0d1a1a] flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#243545] to-[#0d1820]"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                  <p className="text-white text-xs font-medium italic leading-relaxed">
+                    "I looked for the Lord, and He answered me. And He took away all my fears."
+                  </p>
+                  <p className="text-white/40 text-xs mt-3">Psalm 34:4</p>
+                </div>
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-6">
+                  <div className="w-5 h-5 rounded-full bg-white/20"></div>
+                  <div className="w-5 h-5 rounded-full bg-white/20"></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Trust bar */}
-        <section className="bg-[#f8f9ff] border-y border-gray-100">
-          <div className="max-w-4xl mx-auto px-6 py-6 flex flex-wrap justify-center gap-10 text-sm font-semibold text-[#1a2744]">
-            <div className="flex items-center gap-2">⭐ 4.9 App Store Rating</div>
-            <div className="flex items-center gap-2">✝️ Scripture-Based</div>
-            <div className="flex items-center gap-2">⚡ 2–5 Min Daily</div>
-            <div className="flex items-center gap-2">🙏 6 Faith Categories</div>
-          </div>
-        </section>
-
-        {/* Problem/Why */}
-        <section className="py-24 px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="text-[#c9a84c] text-sm font-bold uppercase tracking-widest mb-4">The Difference</div>
-            <h2 className="text-4xl md:text-5xl font-black text-[#1a2744] mb-6 leading-tight">
-              You Read the Bible.<br />But Are You Speaking It?
-            </h2>
-            <p className="text-gray-500 text-lg leading-relaxed mb-6">
-              Reading Scripture is powerful. But when you speak it over your life — out loud, in first person, with faith — something shifts.
-            </p>
-            <p className="text-gray-500 text-lg leading-relaxed mb-6">
-              Proverbs 18:21 says death and life are in the power of the tongue. Romans 10:17 says faith comes by hearing.
-            </p>
-            <p className="text-[#1a2744] font-semibold text-lg">
-              SpeakLife is built on this truth. You open the app. You speak. You go into your day with God's Word on your lips.
-            </p>
-          </div>
-        </section>
-
-        {/* Steps */}
-        <section className="py-20 px-6 bg-[#1a2744]">
+        {/* ── FEATURES ── */}
+        <section className="py-24 px-6 bg-[#f7f8f7]" style={{ fontFamily: "'Inter', sans-serif" }}>
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="text-[#c9a84c] text-sm font-bold uppercase tracking-widest mb-3">How It Works</div>
-              <h2 className="text-4xl font-black text-white">Your 2-Minute Morning Practice</h2>
-            </div>
+            <p className="text-center text-gray-400 text-xs tracking-widest uppercase mb-3">Features</p>
+            <h2
+              className="text-center text-3xl md:text-4xl text-[#1a1a1a] mb-4"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 700 }}
+            >
+              FEATURES
+            </h2>
+            <p className="text-center text-gray-500 text-sm max-w-xl mx-auto mb-16 leading-relaxed">
+              Start each day with uplifting scriptures and affirmations that bring peace, strength and positivity. From personalized content to guided prayer sessions — receive constant inspiration throughout the day.
+            </p>
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { n: "01", emoji: "🌅", title: "Open SpeakLife", desc: "Your daily declarations are waiting. Fresh every morning, written at a level you can speak with confidence." },
-                { n: "02", emoji: "🗣️", title: "Speak Them Aloud", desc: "Say the words out loud — in first person. Your ears hear it. Your heart receives it. Faith activates." },
-                { n: "03", emoji: "☀️", title: "Go Into Your Day", desc: "2–5 minutes total. God's Word is now the first thing your heart heard. That changes everything." },
-              ].map((step) => (
-                <div key={step.n} className="bg-white/8 rounded-2xl p-8 border border-white/10">
-                  <div className="text-[#c9a84c]/40 text-6xl font-black mb-4">{step.n}</div>
-                  <div className="text-4xl mb-4">{step.emoji}</div>
-                  <h3 className="text-white font-bold text-xl mb-3">{step.title}</h3>
-                  <p className="text-white/60 leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Categories */}
-        <section className="py-24 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="text-[#c9a84c] text-sm font-bold uppercase tracking-widest mb-3">Content</div>
-              <h2 className="text-4xl font-black text-[#1a2744]">Declarations for Every Area of Life</h2>
-              <p className="text-gray-500 mt-4 max-w-xl mx-auto">Whatever you're walking through, there's a declaration for it.</p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-              {categories.map((cat) => (
-                <div key={cat.name} className="card-hover bg-gradient-to-br from-[#f8f9ff] to-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-                  <div className="text-4xl mb-3">{cat.emoji}</div>
-                  <div className="font-bold text-[#1a2744] text-lg mb-1">{cat.name}</div>
-                  <div className="text-gray-500 text-sm">{cat.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features */}
-        <section className="py-24 px-6 bg-[#f8f9ff]">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="text-[#c9a84c] text-sm font-bold uppercase tracking-widest mb-3">Features</div>
-              <h2 className="text-4xl font-black text-[#1a2744]">Everything You Need to Declare Daily</h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((f) => (
-                <div key={f.title} className="card-hover bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
-                  <div className="text-3xl mb-4">{f.emoji}</div>
-                  <h3 className="font-bold text-[#1a2744] text-lg mb-2">{f.title}</h3>
+                { n: "01", title: "PRAYERS / DEVOTIONALS", desc: "SpeakLife encourages the renewal of the mind and a personal, intimate relationship with Jesus through prayer and daily devotionals." },
+                { n: "02", title: "THEMES / LIFE SITUATIONS", desc: "From colors and images to font choices — SpeakLife tailors your spiritual journey to you, covering 6 life categories." },
+                { n: "03", title: "CREATE YOUR OWN", desc: "New content is constantly added. Plus you can write your own personalized affirmations to further engage the power of God's Word." },
+              ].map(f => (
+                <div key={f.n} className="card-hover">
+                  <div
+                    className="text-5xl font-black mb-4"
+                    style={{ fontFamily: "'Playfair Display', Georgia, serif", color: "#e0e0e0" }}
+                  >{f.n}</div>
+                  <h3 className="text-sm font-bold tracking-widest text-[#1a1a1a] mb-3">{f.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
                 </div>
               ))}
@@ -203,49 +172,87 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-24 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="text-[#c9a84c] text-sm font-bold uppercase tracking-widest mb-3">Reviews</div>
-              <h2 className="text-4xl font-black text-[#1a2744]">Women Are Waking Up to This</h2>
-              <div className="flex items-center justify-center gap-1 mt-4 text-2xl">⭐⭐⭐⭐⭐ <span className="text-gray-400 text-base ml-2">4.9 on App Store</span></div>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t) => (
-                <div key={t.author} className="card-hover bg-white rounded-2xl p-8 shadow-md border border-gray-100 border-t-4 border-t-[#c9a84c]">
-                  <p className="text-gray-600 leading-relaxed italic mb-6">"{t.quote}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#f8f9ff] rounded-full flex items-center justify-center text-[#1a2744] font-bold">
-                      {t.author[0]}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-[#1a2744] text-sm">{t.author}</div>
-                      <div className="text-xs text-gray-400">App Store Review ⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
+        {/* ── CATEGORIES ── */}
+        <section className="py-24 px-6 bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <div className="max-w-5xl mx-auto">
+            <h2
+              className="text-center text-3xl md:text-4xl text-[#1a1a1a] mb-16"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 700 }}
+            >
+              Six Areas of Life
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {categories.map(cat => (
+                <div key={cat.name} className="card-hover text-center p-8 rounded-2xl bg-[#f7f8f7] border border-gray-100">
+                  <div className="text-4xl mb-3">{cat.emoji}</div>
+                  <div className="font-bold text-[#1a1a1a] text-sm tracking-wider uppercase mb-1">{cat.name}</div>
+                  <div className="text-gray-400 text-xs">{cat.desc}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-24 px-6 bg-[#1a2744]">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Start Speaking Life Today</h2>
-            <p className="text-white/70 text-lg mb-10">Join thousands of women who begin every morning with God's Word on their lips.</p>
+        {/* ── TESTIMONIALS ── */}
+        <section className="py-24 px-6 bg-[#0a1f1f]" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <div className="max-w-5xl mx-auto">
+            <p className="text-center text-white/40 text-xs tracking-widest uppercase mb-3">Reviews</p>
+            <h2
+              className="text-center text-3xl md:text-4xl text-white mb-4"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 700 }}
+            >
+              ONE OF THE BEST
+            </h2>
+            <div className="flex justify-center gap-1 mb-16 text-xl">⭐⭐⭐⭐⭐</div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {testimonials.map(t => (
+                <div key={t.author} className="card-hover bg-white/5 border border-white/10 rounded-2xl p-8">
+                  <p className="text-white/80 text-sm leading-relaxed italic mb-6">"{t.quote}"</p>
+                  <div className="text-white/40 text-xs font-semibold tracking-widest uppercase">{t.author}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section className="hero-water py-32 px-6 text-center relative" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <h2
+              className="text-white mb-6"
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: "clamp(3rem, 8vw, 6rem)",
+                fontWeight: 900,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                lineHeight: 1,
+              }}
+            >
+              START<br />TODAY
+            </h2>
+            <p className="text-white/60 mb-10 text-base max-w-sm mx-auto leading-relaxed">
+              Join thousands of women who begin every morning with God's Word on their lips.
+            </p>
             <a
               href="https://apps.apple.com/us/app/speaklife/id1617492998"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#c9a84c] text-[#1a2744] font-black text-lg px-10 py-5 rounded-full hover:bg-[#e8c96a] transition-all hover:scale-105"
             >
-              Download Free on iOS →
+              <div className="inline-flex bg-black text-white items-center gap-3 px-7 py-3.5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div className="text-left">
+                  <div className="text-xs text-white/60 leading-none">Download on the</div>
+                  <div className="text-base font-semibold leading-tight">App Store</div>
+                </div>
+              </div>
             </a>
-            <p className="text-white/30 text-sm mt-5">3-day free trial on annual plan · $10/mo or $50/yr · iOS only</p>
+            <p className="text-white/30 text-xs mt-5">3-day free trial · $10/mo or $50/yr</p>
           </div>
         </section>
+
       </main>
       <Footer />
     </>
