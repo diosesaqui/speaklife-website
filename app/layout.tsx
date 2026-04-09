@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
+  verification: {
+    google: "Bx6-MZp74W31CaAHUCKj8LdIY7fYAXWzKXgKpVgpF4Q",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
