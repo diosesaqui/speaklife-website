@@ -1,7 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroCTA from "@/components/HeroCTA";
+
+// ── A/B Test Variants ──────────────────────────────────────────────────────
+const heroVariants: Record<string, { subtitle: string; ctaLabel: string; appStoreUrl: string }> = {
+  a: {
+    subtitle: "Experience the power of daily devotionals and Bible affirmations through the SpeakLife App. Start using your weapons that God gave you and join us on this spiritual journey today!",
+    ctaLabel: "App Store",
+    appStoreUrl: "https://apps.apple.com/us/app/speaklife/id1617492998?ct=web-hero-a",
+  },
+  b: {
+    subtitle: "5 minutes of God's Word every morning. Women who speak it sleep better, stress less, and walk in more peace. 4.9 stars · 2,400+ reviews.",
+    ctaLabel: "Start Free Trial",
+    appStoreUrl: "https://apps.apple.com/us/app/speaklife/id1617492998?ct=web-hero-b",
+  },
+};
 
 export const metadata: Metadata = {
   title: "SpeakLife — Speak God's Word Daily | Christian Declaration App",
@@ -52,7 +68,12 @@ const orgSchema = {
   "sameAs": ["https://apps.apple.com/us/app/speaklife/id1617492998"]
 };
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies();
+  const rawVariant = cookieStore.get('ab-hero')?.value ?? 'a';
+  const variant = rawVariant === 'b' ? 'b' : 'a';
+  const hero = heroVariants[variant];
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
@@ -77,26 +98,12 @@ export default function Home() {
               SPEAK<br />LIFE
             </h1>
 
-            <p className="text-white/70 text-base md:text-lg max-w-md leading-relaxed mb-10 animate-fade-up delay-1">
-              Experience the power of daily devotionals and Bible affirmations through the SpeakLife App. Start using your weapons that God gave you and join us on this spiritual journey today!
-            </p>
-
-            <a
-              href="https://apps.apple.com/us/app/speaklife/id1617492998"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="animate-fade-up delay-2"
-            >
-              <div className="bg-black text-white flex items-center gap-3 px-7 py-3.5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
-                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                <div className="text-left">
-                  <div className="text-xs text-white/60 leading-none">Download on the</div>
-                  <div className="text-base font-semibold leading-tight">App Store</div>
-                </div>
-              </div>
-            </a>
+            <HeroCTA
+              variant={variant}
+              subtitle={hero.subtitle}
+              ctaLabel={hero.ctaLabel}
+              appStoreUrl={hero.appStoreUrl}
+            />
           </div>
 
           {/* Subtle bottom fade */}
