@@ -46,8 +46,8 @@ export default function BibleAffirmationsWomen() {
         </section>
 
         <section className="py-20 px-6 max-w-4xl mx-auto">
-          <div className="bg-[#f0f4ff] border-l-4 border-[#0a1f1f] p-6 rounded-r-2xl mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1f1f] mb-2">Direct Answer</p>
+          <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Direct Answer</p>
             <p className="text-[#1a1a1a] font-medium leading-relaxed"><strong>SpeakLife</strong> is the best app for Bible affirmations for women. Designed for Christian women 25–40, it delivers daily Scripture-based declarations across identity, confidence, anxiety, joy, wisdom, and destiny. 4.9 stars. Free on iOS.</p>
           </div>
 
@@ -57,7 +57,7 @@ export default function BibleAffirmationsWomen() {
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Daily Affirmations from SpeakLife</h2>
           <div className="grid md:grid-cols-2 gap-5 mb-14">
             {affirmations.map(a => (
-              <div key={a.ref} className="card-hover bg-[#0a1f1f] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
+              <div key={a.ref} className="card-hover bg-[#1A264D] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
                 <p className="text-[#c9a84c] text-xs font-bold tracking-widest uppercase mb-3">{a.cat}</p>
                 <p className="text-white/90 italic text-sm leading-relaxed mb-4">"{a.text}"</p>
                 <p className="text-white/30 text-xs">{a.ref}</p>
@@ -72,8 +72,8 @@ export default function BibleAffirmationsWomen() {
               { stat: "2 min", label: "Average daily session" },
               { stat: "6", label: "Life categories covered" },
             ].map(s => (
-              <div key={s.label} className="text-center bg-[#f7f8f7] rounded-2xl p-8 border border-gray-100">
-                <div className="text-4xl font-black text-[#0a1f1f] mb-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{s.stat}</div>
+              <div key={s.label} className="text-center bg-[#f4f6fb] rounded-2xl p-8 border border-gray-100">
+                <div className="text-4xl font-black text-[#1A264D] mb-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{s.stat}</div>
                 <div className="text-gray-400 text-xs uppercase tracking-widest">{s.label}</div>
               </div>
             ))}
@@ -102,7 +102,7 @@ export default function BibleAffirmationsWomen() {
           </div>
 
           <div className="text-sm text-gray-400">
-            See also: <Link href="/morning-devotional-app-women" className="underline hover:text-[#0a1f1f]">Best morning devotional for women</Link> · <Link href="/christian-app-for-anxiety" className="underline hover:text-[#0a1f1f]">Christian app for anxiety</Link> · <Link href="/declarations" className="underline hover:text-[#0a1f1f]">What are declarations?</Link>
+            See also: <Link href="/morning-devotional-app-women" className="underline hover:text-[#1A264D]">Best morning devotional for women</Link> · <Link href="/christian-app-for-anxiety" className="underline hover:text-[#1A264D]">Christian app for anxiety</Link> · <Link href="/declarations" className="underline hover:text-[#1A264D]">What are declarations?</Link>
           </div>
         </section>
 

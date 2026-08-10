@@ -3,19 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --teal-dark: #0a1f1f;
-  --teal-mid: #0f2a28;
+  /* SLBlue — lifted straight from the iOS app so web and app match.
+     Constants.SLBlue = Color(#colorLiteral(red: 0.1, green: 0.15, blue: 0.3, alpha: 1))
+     0.1/0.15/0.3 x 255 -> 26, 38, 77 -> #1A264D */
+  --sl-blue: #1A264D;
+  --sl-blue-deep: #111B3A;
+  --sl-blue-darkest: #0B1226;
+  --sl-blue-lift: #26356B;
   --gold: #c9a84c;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
 body {
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: #ffffff;
+  /* 16px minimum — anything smaller triggers iOS Safari auto-zoom on focus. */
+  font-size: 16px;
 }
 
+.serif-display {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+}
+
+/* ── Hero background ──────────────────────────────────────────────────── */
 .hero-water {
-  background: linear-gradient(180deg, #0a1f1f 0%, #0d2825 50%, #0a1e1e 100%);
+  background: linear-gradient(180deg, #1A264D 0%, #1D2A55 48%, #141E42 100%);
   position: relative;
   overflow: hidden;
 }
@@ -24,31 +50,59 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 20%, rgba(30,74,68,0.5) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(15,42,40,0.7) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 10%, rgba(64, 88, 170, 0.26) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 15% 85%, rgba(11, 18, 38, 0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.serif-display {
-  font-family: 'Playfair Display', Georgia, serif;
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* ── Phone mockup ─────────────────────────────────────────────────────── */
 .phone-shadow {
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
 }
+
+.shadow-glow {
+  box-shadow: 0 8px 30px -6px rgba(201, 168, 76, 0.45);
+}
+
+/* ── Motion ───────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.12s; opacity: 0; }
+.delay-2 { animation-delay: 0.24s; opacity: 0; }
+.delay-3 { animation-delay: 0.36s; opacity: 0; }
+.delay-4 { animation-delay: 0.48s; opacity: 0; }
 
 .card-hover {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Balanced headline wrapping where supported. */
+.text-balance { text-wrap: balance; }
+.text-pretty  { text-wrap: pretty; }
+
+/* Touch devices already have the tap-through button — never show them a QR
+   code pointing at the phone they're holding. */
+@media (pointer: coarse) {
+  .desktop-only { display: none !important; }
 }
-.animate-fade-up { animation: fadeUp 0.8s ease forwards; }
-.delay-1 { animation-delay: 0.2s; opacity: 0; }
-.delay-2 { animation-delay: 0.4s; opacity: 0; }

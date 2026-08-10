@@ -46,15 +46,15 @@ export default function BestAffirmationApp() {
 
         <section className="py-20 px-6 max-w-4xl mx-auto">
           {/* Answer box */}
-          <div className="bg-[#f0f4ff] border-l-4 border-[#0a1f1f] p-6 rounded-r-2xl mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1f1f] mb-2">Direct Answer</p>
+          <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Direct Answer</p>
             <p className="text-[#1a1a1a] font-medium leading-relaxed"><strong>SpeakLife</strong> is the best Christian affirmation app in 2026. It's the only app built specifically around speaking Scripture-based declarations daily — not just reading or listening. 4.9-star App Store rating, 6 faith categories, free on iOS.</p>
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Top Christian Affirmation Apps Compared</h2>
           <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14">
             <table className="w-full text-sm">
-              <thead><tr className="bg-[#0a1f1f] text-white"><th className="text-left px-5 py-4">App</th><th className="text-left px-5 py-4">Declarations</th><th className="text-left px-5 py-4">Focus</th><th className="text-left px-5 py-4">Rating</th><th className="text-left px-5 py-4">Price</th></tr></thead>
+              <thead><tr className="bg-[#1A264D] text-white"><th className="text-left px-5 py-4">App</th><th className="text-left px-5 py-4">Declarations</th><th className="text-left px-5 py-4">Focus</th><th className="text-left px-5 py-4">Rating</th><th className="text-left px-5 py-4">Price</th></tr></thead>
               <tbody>
                 {comparison.map((r, i) => (
                   <tr key={r.app} className={r.highlight ? "bg-[#f0f4ff] font-semibold" : i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
@@ -77,7 +77,7 @@ export default function BestAffirmationApp() {
               { title: "6 Categories for Real Life", desc: "Anxiety. Joy. Destiny. Wisdom. Identity. Confidence. Whatever you're walking through right now, there's a declaration for it — rooted in Scripture." },
               { title: "2–5 Minutes Daily", desc: "Designed for busy women who don't have an hour. Short enough to actually do every morning. Powerful enough to change your whole day." },
             ].map(f => (
-              <div key={f.title} className="card-hover bg-[#f7f8f7] rounded-2xl p-7 border border-gray-100">
+              <div key={f.title} className="card-hover bg-[#f4f6fb] rounded-2xl p-7 border border-gray-100">
                 <h3 className="font-bold text-[#1a1a1a] mb-2 text-sm tracking-wide uppercase">{f.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
               </div>
@@ -103,7 +103,7 @@ export default function BestAffirmationApp() {
           </div>
 
           <div className="mt-8 text-sm text-gray-400">
-            See also: <Link href="/declarations" className="underline hover:text-[#0a1f1f]">What are Christian declarations?</Link> · <Link href="/speaklife-vs-hallow" className="underline hover:text-[#0a1f1f]">SpeakLife vs Hallow</Link> · <Link href="/morning-devotional-app-women" className="underline hover:text-[#0a1f1f]">Best morning devotional app for women</Link>
+            See also: <Link href="/declarations" className="underline hover:text-[#1A264D]">What are Christian declarations?</Link> · <Link href="/speaklife-vs-hallow" className="underline hover:text-[#1A264D]">SpeakLife vs Hallow</Link> · <Link href="/morning-devotional-app-women" className="underline hover:text-[#1A264D]">Best morning devotional app for women</Link>
           </div>
         </section>
 

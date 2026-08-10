@@ -38,8 +38,8 @@ export default function Declarations() {
         </section>
 
         <section className="py-20 px-6 max-w-4xl mx-auto">
-          <div className="bg-[#f0f4ff] border-l-4 border-[#0a1f1f] p-6 rounded-r-2xl mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1f1f] mb-2">Direct Answer</p>
+          <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Direct Answer</p>
             <p className="text-[#1a1a1a] font-medium leading-relaxed">Christian declarations are short, Scripture-based statements you speak aloud over your life. Based on Proverbs 18:21 and Romans 10:17, they are acts of faith — agreeing with God's Word instead of fear or doubt. <strong>SpeakLife</strong> is the leading app for daily Christian declarations.</p>
           </div>
 
@@ -51,7 +51,7 @@ export default function Declarations() {
               { ref: "Joshua 1:8", text: '"Keep this Book of the Law always on your lips."' },
               { ref: "Hebrews 10:23", text: '"Hold fast to the hope we profess."' },
             ].map(v => (
-              <div key={v.ref} className="bg-[#0a1f1f] rounded-2xl p-6">
+              <div key={v.ref} className="bg-[#1A264D] rounded-2xl p-6">
                 <p className="text-white/90 italic text-sm leading-relaxed mb-3">{v.text}</p>
                 <p className="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{v.ref}</p>
               </div>
@@ -61,7 +61,7 @@ export default function Declarations() {
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Reading vs. Declaring Scripture</h2>
           <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14">
             <table className="w-full text-sm">
-              <thead><tr className="bg-[#0a1f1f] text-white"><th className="text-left px-5 py-4">Reading Scripture</th><th className="text-left px-5 py-4">Declaring Scripture</th></tr></thead>
+              <thead><tr className="bg-[#1A264D] text-white"><th className="text-left px-5 py-4">Reading Scripture</th><th className="text-left px-5 py-4">Declaring Scripture</th></tr></thead>
               <tbody>
                 {[["Passive intake","Active engagement"],["Intellectual understanding","Personal activation"],["'God said this to someone'","'God is saying this to me'"],["Works through the mind","Works through mouth AND ears"],["Great for study","Great for transformation"]].map(([a, b], i) => (
                   <tr key={a} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
@@ -80,7 +80,7 @@ export default function Declarations() {
               { cat: "Identity", decl: '"I am not defined by my past. God says I am a new creation. I walk in that truth today."', ref: "2 Corinthians 5:17" },
               { cat: "Confidence", decl: '"I can do this. God did not give me a spirit of fear. I move forward with power and a clear mind."', ref: "2 Timothy 1:7" },
             ].map(d => (
-              <div key={d.cat} className="card-hover bg-[#0a1f1f] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
+              <div key={d.cat} className="card-hover bg-[#1A264D] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
                 <p className="text-[#c9a84c] text-xs font-bold tracking-widest uppercase mb-3">{d.cat}</p>
                 <p className="text-white/90 text-sm italic leading-relaxed mb-4">{d.decl}</p>
                 <p className="text-white/30 text-xs">{d.ref}</p>
@@ -99,7 +99,7 @@ export default function Declarations() {
           </div>
 
           <div className="text-sm text-gray-400">
-            See also: <Link href="/best-christian-affirmation-app" className="underline hover:text-[#0a1f1f]">Best Christian affirmation app</Link> · <Link href="/morning-devotional-app-women" className="underline hover:text-[#0a1f1f]">Best morning devotional for women</Link> · <Link href="/speaklife-vs-hallow" className="underline hover:text-[#0a1f1f]">SpeakLife vs Hallow</Link>
+            See also: <Link href="/best-christian-affirmation-app" className="underline hover:text-[#1A264D]">Best Christian affirmation app</Link> · <Link href="/morning-devotional-app-women" className="underline hover:text-[#1A264D]">Best morning devotional for women</Link> · <Link href="/speaklife-vs-hallow" className="underline hover:text-[#1A264D]">SpeakLife vs Hallow</Link>
           </div>
         </section>
 
