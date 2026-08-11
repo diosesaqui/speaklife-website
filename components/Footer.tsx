@@ -27,10 +27,13 @@ export default function Footer() {
         </nav>
 
         <div className="flex gap-6 text-xs">
-          {/* Real handles, supplied by the owner. Instagram deliberately
-             omitted — a wrong URL in the footer 404s in production, which is
-             what the invented placeholders here were doing. */}
+          {/* Confirmed handles — do not change without asking.
+             NOTE: the iOS app's "Follow us on Instagram" links to
+             instagram.com/speaklife.affirmationsapp, which does not match the
+             account used here. Worth checking whether that link in the app is
+             stale. */}
           <a href="https://www.tiktok.com/@speaklife.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white/80">TikTok</a>
+          <a href="https://www.instagram.com/speaklifeapp" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white/80">Instagram</a>
           <a href="https://www.facebook.com/Speaklife.bibleapp" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white/80">Facebook</a>
         </div>
       </div>
