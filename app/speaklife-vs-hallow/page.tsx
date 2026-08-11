@@ -18,7 +18,7 @@ const rows = [
   ["Monthly price", "$12/mo", "$10/mo"],
   ["Annual price", "$49/yr ✅ cheaper", "$70/yr"],
   ["Free trial", "7-day", "7-day"],
-  ["App Store rating", "⭐ 4.9", "⭐ 4.8"],
+  ["App Store rating", "⭐ 4.9 (1,500+)", "⭐ 4.9 (372,000)"],
   ["Platform", "iOS", "iOS & Android"],
 ];
 
