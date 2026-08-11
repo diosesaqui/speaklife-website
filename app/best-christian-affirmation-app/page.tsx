@@ -15,15 +15,15 @@ const schema = {
     { "@type": "Question", "name": "What is the best Christian affirmation app?", "acceptedAnswer": { "@type": "Answer", "text": "SpeakLife is the best Christian affirmation app in 2026. It's the only app built specifically around speaking Scripture-based declarations daily. 4.9-star App Store rating, 6 categories covering anxiety, identity, confidence, joy, wisdom, and destiny. Free to download on iOS." } },
     { "@type": "Question", "name": "Are Christian affirmations biblical?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Proverbs 18:21 says death and life are in the power of the tongue. Romans 10:17 says faith comes by hearing the Word of God. Speaking Scripture is an act of faith — not positive thinking or New Age manifestation." } },
     { "@type": "Question", "name": "What's the difference between Christian affirmations and secular affirmations?", "acceptedAnswer": { "@type": "Answer", "text": "Secular affirmations are self-generated ('I am enough'). Christian declarations are based on what God says in Scripture ('God says I am enough — Philippians 4:13'). The source of authority is completely different." } },
-    { "@type": "Question", "name": "How much does SpeakLife cost?", "acceptedAnswer": { "@type": "Answer", "text": "SpeakLife costs $10/month or $50/year. There is a 3-day free trial on the annual plan. The app is free to download on iOS." } },
+    { "@type": "Question", "name": "How much does SpeakLife cost?", "acceptedAnswer": { "@type": "Answer", "text": "SpeakLife costs $12/month or $49/year. There is a 7-day free trial. The app is free to download on iOS." } },
   ]
 };
 
 const comparison = [
-  { app: "SpeakLife", declarations: "✅ Core feature", focus: "Speak Scripture daily", rating: "4.9 ⭐", price: "$10/mo or $50/yr", highlight: true },
+  { app: "SpeakLife", declarations: "✅ Core feature", focus: "Speak Scripture daily", rating: "4.9 ⭐", price: "$12/mo or $49/yr", highlight: true },
   { app: "Hallow", declarations: "❌", focus: "Prayer & meditation", rating: "4.8 ⭐", price: "$10/mo or $70/yr", highlight: false },
   { app: "YouVersion", declarations: "❌", focus: "Bible reading", rating: "4.9 ⭐", price: "Free", highlight: false },
-  { app: "Abide", declarations: "Partial", focus: "Sleep & meditation", rating: "4.7 ⭐", price: "$10/mo or $60/yr", highlight: false },
+  { app: "Abide", declarations: "Partial", focus: "Sleep & meditation", rating: "4.7 ⭐", price: "$10/mo or $40/yr", highlight: false },
 ];
 
 export default function BestAffirmationApp() {
@@ -110,7 +110,7 @@ export default function BestAffirmationApp() {
         <section className="hero-water py-20 px-6 text-center relative">
           <div className="relative z-10">
             <h2 className="text-white mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, textTransform: "uppercase" }}>Try It Free</h2>
-            <p className="text-white/60 mb-8 text-sm">3-day free trial · $50/yr or $10/mo · iOS only</p>
+            <p className="text-white/60 mb-8 text-sm">7-day free trial · $49/yr or $12/mo · iOS only</p>
             <a href="https://apps.apple.com/us/app/speaklife/id1617492998" target="_blank" rel="noopener noreferrer" className="inline-flex bg-black text-white items-center gap-3 px-7 py-3.5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
               <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               <div className="text-left"><div className="text-xs text-white/60 leading-none">Download on the</div><div className="text-base font-semibold leading-tight">App Store</div></div>

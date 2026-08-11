@@ -15,9 +15,9 @@ const rows = [
   ["Scripture declarations", "✅ Core feature", "❌"],
   ["Sleep content", "❌", "✅"],
   ["Celebrity voices", "❌", "✅ Mark Wahlberg, etc."],
-  ["Monthly price", "$10/mo", "$10/mo"],
-  ["Annual price", "$50/yr ✅ cheaper", "$70/yr"],
-  ["Free trial", "3-day (annual)", "7-day"],
+  ["Monthly price", "$12/mo", "$10/mo"],
+  ["Annual price", "$49/yr ✅ cheaper", "$70/yr"],
+  ["Free trial", "7-day", "7-day"],
   ["App Store rating", "⭐ 4.9", "⭐ 4.8"],
   ["Platform", "iOS", "iOS & Android"],
 ];
@@ -114,7 +114,7 @@ export default function VsHallow() {
 
         <section className="py-20 px-6 bg-[#1A264D] text-center">
           <h2 className="text-3xl font-black text-white mb-4">Try SpeakLife Free</h2>
-          <p className="text-white/70 mb-8">3-day free trial on annual plan. $20/yr cheaper than Hallow.</p>
+          <p className="text-white/70 mb-8">7-day free trial. $21/yr cheaper than Hallow.</p>
           <a href="https://apps.apple.com/us/app/speaklife/id1617492998" className="bg-[#c9a84c] text-[#1A264D] font-black text-lg px-10 py-4 rounded-full hover:bg-[#e8c96a] transition-all">
             Download Free on iOS →
           </a>
