@@ -106,3 +106,13 @@ body {
 @media (pointer: coarse) {
   .desktop-only { display: none !important; }
 }
+
+/* Device frame — layered shadow reads as a real object sitting on the page
+   rather than a flat cut-out. Cheaper than a rendered mockup image and it
+   costs no bytes. */
+.phone-frame {
+  filter:
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 40px 70px rgba(0, 0, 0, 0.45));
+}

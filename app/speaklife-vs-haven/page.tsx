@@ -49,15 +49,14 @@ const data: ComparisonData = {
   competitor: "Haven",
   headline: "SpeakLife vs Haven:\nWhich Is Right for You?",
   subhead:
-    "The closest comparison on this site — both have AI Scripture chat, daily verses and streaks. The split is study versus declaration.",
+    "Both have AI Scripture chat, daily verses and streaks. The split isn't features — it's whether you want answers or a practice.",
   verdict: (
     <>
-      <strong>Choose SpeakLife</strong> if you want a daily practice — Scripture
-      you speak out loud, with a seven-day plan built around what you&rsquo;re
-      facing. <strong>Choose Haven</strong> if you mainly want to understand the
-      Bible better and have a conversational study companion. Haven is the
-      bigger, more established app; SpeakLife is the one that asks something of
-      you every morning.
+      <strong>Choose SpeakLife</strong>{" "}if you want a daily practice —
+      Scripture you speak out loud, a seven-day plan built around what
+      you&rsquo;re facing, and Bible Chat included.{" "}
+      <strong>Choose Haven</strong>{" "}if the chat is all you want: a
+      conversational way to study Scripture, with no daily practice attached.
     </>
   ),
   rows: [
@@ -73,7 +72,7 @@ const data: ComparisonData = {
     ["Write your own declarations", "✅", "❌"],
     ["Home screen widget", "✅", "Partial"],
     ["Pricing", "$12/mo · $49/yr", "Tiers from $4.99–$19.99"],
-    ["Free trial", "7-day", "✅"],
+    ["Free trial", "✅ 7-day", "✅"],
     ["App Store rating", "⭐ 4.9 (1,500+)", "⭐ 4.9 (146,000)"],
     ["Platform", "iOS", "iOS & Android"],
   ],
@@ -83,7 +82,7 @@ const data: ComparisonData = {
     "SpeakLife assumes you already believe it and asks you to say it. Reject the lie, declare the truth (2 Corinthians 10:5). The app's job is to hand you the right sentence for today and make sure you actually speak it.",
   themTitle: "Haven — You ask it",
   themBody:
-    "Haven is a conversational study companion. You bring a question, it answers with Scripture and context. Genuinely useful for learning — but understanding a promise and declaring it are two different acts.",
+    "Haven is a conversational study companion, and a good one. SpeakLife has that too — Bible Chat answers the same kind of question. The difference is what happens next: Haven's answer is the destination, where in SpeakLife it feeds a practice you carry into the day.",
   chooseUs: [
     "You already know the verses and want to start using them",
     "You want a seven-day plan around one specific fight",
@@ -93,14 +92,14 @@ const data: ComparisonData = {
   ],
   chooseThem: [
     "You're newer to the Bible and want things explained",
-    "You mainly want a study and guidance companion",
-    "You want the larger, longer-established app",
+    "You mainly want to ask questions, not build a habit",
+    "You want a study companion and nothing attached to it",
     "You're on Android",
     "You prefer reading answers to speaking words",
   ],
   bothHeading: "Can You Use Both?",
   bothBody:
-    "They overlap more than most pairs on this site, so most people settle on one. If you use both, the natural split is Haven to understand a passage and SpeakLife to speak it over your life.",
+    "You can, though there's more overlap here than most pairs — SpeakLife already includes Bible Chat, so for most people it replaces rather than complements.",
   ctaSub: "7-day free trial · Cancel any time",
 };
 

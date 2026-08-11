@@ -51,10 +51,11 @@ const data: ComparisonData = {
     "One hands you words to say. The other gives you audio to rest in. That difference decides it.",
   verdict: (
     <>
-      <strong>Choose SpeakLife</strong> if you want to speak Scripture over a
+      <strong>Choose SpeakLife</strong>{" "}if you want to speak Scripture over a
       specific fight and want a plan around it. <strong>Choose Pray.com</strong>{" "}
       if you want a deep audio library — daily prayer, Bedtime Bible Stories and
-      narrated Scripture. Pray.com is far larger; SpeakLife is far more targeted.
+      narrated Scripture to listen to. Pray.com has the bigger library;
+      SpeakLife gives you something to do with it.
     </>
   ),
   rows: [
@@ -70,7 +71,7 @@ const data: ComparisonData = {
     ["Life categories", "50 + all 66 Bible books", "Themed prayer plans"],
     ["Streaks & strength score", "✅", "Partial"],
     ["Pricing", "$12/mo · $49/yr", "Tiers from $1.99–$109.99"],
-    ["Free trial", "7-day", "✅"],
+    ["Free trial", "✅ 7-day", "✅"],
     ["App Store rating", "⭐ 4.9 (1,500+)", "⭐ 4.8 (193,000)"],
     ["Platform", "iOS", "iOS & Android"],
   ],
