@@ -83,13 +83,19 @@ const reviews = [
   },
 ];
 
-const storms = [
-  { name: "Anxiety", line: "for the mornings that start with dread" },
-  { name: "Fear", line: "for the news you didn’t want to hear" },
-  { name: "Provision", line: "for the month that’s longer than the money" },
-  { name: "Identity", line: "for when you forget whose you are" },
-  { name: "Healing", line: "for the body that isn’t cooperating" },
-  { name: "Purpose", line: "for when the road ahead went quiet" },
+/* The real category list, read from DeclarationCategory in the iOS app:
+   50 life categories plus 62 Bible-book categories. The site had been
+   claiming "6 categories" everywhere — an 8x undercount of the product. */
+const categories = [
+  "Anxiety", "Fear", "Health", "Wealth", "Identity", "Confidence",
+  "Marriage", "Parenting", "Single parenting", "Grief", "Divorce", "Debt",
+  "Addiction", "Mental health", "Inner healing", "Forgiveness", "Anger", "Purity",
+  "Fertility", "Housing", "School & exams", "Work", "Business", "Favor",
+  "Hard times", "Rest", "Joy", "Hope", "Faith", "Grace",
+  "Destiny", "New season", "Wisdom", "Gratitude", "Praise", "Love",
+  "Friendship", "Dating", "Salvation for loved ones", "God’s heart", "God’s protection", "Warfare",
+  "The blood", "The name of Jesus", "Miracles", "Obedience", "Spiritual growth", "Wellness",
+  "Heaven", "Speak life",
 ];
 
 const rhythm = [
@@ -384,79 +390,86 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* ═══ THE SIX STORMS ═══════════════════════════════════════════ */}
-        <section id="areas" className="bg-[#f4f6fb] px-5 py-24 md:py-32">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="serif-display mb-14 text-center text-3xl font-bold leading-tight text-[#1A264D] md:text-5xl">
-              Six storms. Hundreds of promises.
+        {/* ═══ DAILY BURST ════════════════════════════════════════════
+            The app's actual differentiator and it was nowhere on the site.
+            Numbers come from the iOS source: burstDeclarationCount = 7, a
+            7-day Enforcement, a 0–100 Spiritual Strength score. The framing
+            line is the app's own onboarding copy, verbatim.
+            ═════════════════════════════════════════════════════════════ */}
+        <section id="burst" className="hero-water grain relative px-5 py-24 md:py-32">
+          <div className="relative z-10 mx-auto max-w-3xl text-center">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              When you’re in a specific fight
+            </p>
+            <h2 className="serif-display text-balance text-3xl font-bold leading-tight text-white md:text-5xl">
+              Name it. Get seven days built around it.
             </h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {storms.map((s) => (
-                <div
-                  key={s.name}
-                  className="card-hover rounded-2xl border border-black/[0.06] bg-white p-7"
-                >
-                  <div className="serif-display text-xl font-bold text-[#1A264D]">{s.name}</div>
-                  <div className="mt-2 text-sm leading-relaxed text-[#1A264D]/50">{s.line}</div>
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/60">
+              Tell SpeakLife what you’re believing for — the diagnosis, the
+              marriage, the debt, the child. It builds a seven-day Daily Burst
+              around that one thing, and you hold the ground until it moves.
+            </p>
+
+            <div className="mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-4">
+              {[
+                { big: "7", small: "declarations a day" },
+                { big: "7", small: "days per Burst" },
+                { big: "100", small: "point strength score" },
+              ].map((x) => (
+                <div key={x.small} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                  <div className="serif-display text-4xl font-black text-gold">{x.big}</div>
+                  <div className="mt-2 text-xs leading-tight text-white/50">{x.small}</div>
                 </div>
               ))}
             </div>
+
+            <p className="mt-10 text-sm italic text-white/40">
+              “Name a fight, or something you’re believing for. Your Daily Burst
+              is built around it for seven days.”
+              <span className="mt-1 block not-italic text-xs uppercase tracking-wide text-white/25">
+                — from the app
+              </span>
+            </p>
           </div>
         </section>
 
-        {/* ═══ FOUNDER STORY ════════════════════════════════════════════
-            The Bell's palsy account is the strongest story in the review
-            corpus — but it was posted from the founder's own App Store
-            account, so it cannot run as a third-party testimonial (FTC
-            endorsement disclosure). Told in first person and clearly labelled
-            as the founder's, it's both honest and considerably more powerful.
-            Framed as testimony, never as medical claim.
+        {/* ═══ COVERAGE ═══════════════════════════════════════════════
+            Was "Six storms. Hundreds of promises." — carried over from the
+            old site, which claimed 6 categories. The app actually ships 50
+            life categories plus every book of the Bible. Specific, unglamorous
+            categories (grief, fertility, debt, single parenting) do more work
+            here than a tidy six, because they tell a visitor their exact
+            situation is already covered.
             ═════════════════════════════════════════════════════════════ */}
-        <section id="founder" className="bg-white px-5 py-24 md:py-32">
-          <div className="mx-auto max-w-2xl">
-            <p className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-[#1A264D]/35">
-              Why this exists
-            </p>
-            <h2 className="serif-display text-balance text-center text-3xl font-bold leading-tight text-[#1A264D] md:text-5xl">
-              I built this because it worked on me.
-            </h2>
-
-            <div className="mt-10 rounded-3xl border border-black/[0.07] bg-[#f4f6fb] p-8 md:p-12">
-              <div className="space-y-5 text-lg leading-relaxed text-[#1A264D]/70">
-                <p>
-                  In 2020 I woke up with Bell’s palsy. Half my face was stuck. I
-                  went to the emergency room and a doctor told me it might never
-                  fully come back.
-                </p>
-                <p>
-                  I didn’t have a strategy. I had a handful of healing promises.
-                  I saved five of them and said them out loud three to ten times
-                  a day, whether I felt like it or not.
-                </p>
-                <p className="font-medium text-[#1A264D]">
-                  My face came back a little more every morning. Today it’s
-                  fully healed. All praise to the Most High.
-                </p>
-                <p>
-                  That’s the whole reason SpeakLife exists. Not as medicine — as
-                  the thing I reached for when I had nothing else to say.
-                </p>
-              </div>
-
-              <div className="mt-9 flex items-center gap-4 border-t border-black/[0.07] pt-7">
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#1A264D] text-lg font-bold text-gold">
-                  F
-                </div>
-                <div>
-                  <div className="font-semibold text-[#1A264D]">Franchiz</div>
-                  <div className="text-sm text-[#1A264D]/50">Founder, SpeakLife</div>
-                </div>
-              </div>
+        <section id="areas" className="bg-[#f4f6fb] px-5 py-24 md:py-32">
+          <div className="mx-auto max-w-5xl">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#1A264D]/35">
+                Coverage
+              </p>
+              <h2 className="serif-display text-balance text-3xl font-bold leading-tight text-[#1A264D] md:text-5xl">
+                Fifty categories. Plus every book of the Bible.
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-[#1A264D]/55">
+                Not six vague themes. The actual thing you’re carrying — the
+                diagnosis, the empty account, the custody hearing, the child
+                you’re still believing for.
+              </p>
             </div>
 
-            <p className="mt-5 text-center text-xs text-[#1A264D]/40">
-              Founder’s personal testimony. SpeakLife is not a medical treatment
-              and isn’t a substitute for care from your doctor.
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {categories.map((c) => (
+                <span
+                  key={c}
+                  className="rounded-full border border-[#1A264D]/10 bg-white px-4 py-2 text-sm text-[#1A264D]/70"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+
+            <p className="mt-10 text-center text-sm text-[#1A264D]/40">
+              …and a category for all 66 books of the Bible.
             </p>
           </div>
         </section>

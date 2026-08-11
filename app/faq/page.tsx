@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
-  { q: "What is SpeakLife?", a: "SpeakLife is a Christian iOS app that delivers Scripture-based declarations for you to speak aloud every morning. It covers 6 life categories: Anxiety, Joy, Destiny, Wisdom, Identity, and Confidence. Built on Romans 10:17 — faith comes by hearing." },
+  { q: "What is SpeakLife?", a: "SpeakLife is a Christian iOS app that delivers Scripture-based declarations for you to speak aloud every morning. It covers 50 life categories — from anxiety, identity and confidence to grief, debt, fertility, divorce and mental health — plus a category for every book of the Bible. Built on Romans 10:17 — faith comes by hearing." },
   { q: "Who is SpeakLife for?", a: "Designed with Christian women aged 25–40 in mind. But men use and love it too. If you want to speak God's Word over your life daily, SpeakLife is for you." },
   { q: "What are Christian declarations?", a: "Declarations are Scripture-based statements you speak aloud over your life. Rooted in Proverbs 18:21 ('death and life are in the power of the tongue') and Romans 10:17 ('faith comes by hearing'). When you speak God's Word, faith activates." },
   { q: "Are declarations biblical?", a: "Yes. Proverbs 18:21, Romans 10:17, Joshua 1:8, and Hebrews 10:23 all support speaking God's Word. This is not positive thinking — it's faith in action." },

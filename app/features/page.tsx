@@ -4,45 +4,72 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Features — SpeakLife | Christian Declaration App",
-  description: "Explore SpeakLife features — daily declarations, audio devotionals, 6 life categories, personalized content, and more.",
+  description: "Everything in SpeakLife — Daily Burst 7-day plans, Bible Chat, 50 life categories, audio devotionals, streaks, custom declarations, widgets and reminders.",
 };
 
+/* Rewritten against the shipped app. The old list predated Bible Chat, the
+   Daily Burst, streaks and widgets, and it claimed 6 categories when the app
+   ships 50 life categories plus 62 Bible-book categories. */
 const features = [
   {
     n: "01",
     title: "DAILY DECLARATIONS",
-    desc: "Start each day with fresh Scripture-based declarations. Written clearly so you can speak them with confidence — no theology degree required.",
-    detail: "New declarations every morning across 6 life categories. Speak them aloud, let your faith grow.",
+    desc: "Fresh Scripture-based declarations every morning, written so you can speak them with confidence — no theology degree required.",
+    detail: "50 life categories, plus a category for all 66 books of the Bible. Whatever you're walking through, there's already a declaration for it.",
   },
   {
     n: "02",
-    title: "PRAYERS / DEVOTIONALS",
-    desc: "SpeakLife encourages not just the renewal of the mind but the nurturing of a personal and intimate relationship with Jesus through prayer and daily devotionals.",
-    detail: "Audio devotionals you can listen to or speak along with. Perfect for morning routines, commutes, or quiet moments.",
+    title: "DAILY BURST",
+    desc: "Name the fight — the diagnosis, the marriage, the debt, the child you're believing for — and SpeakLife builds a seven-day plan around that one thing.",
+    detail: "Seven declarations a day for seven days. You hold the ground until it moves.",
   },
   {
     n: "03",
-    title: "THEMES / LIFE SITUATIONS",
-    desc: "From the colors, images and fonts within your theme to the selection of categories — SpeakLife tailors your spiritual journey to you.",
-    detail: "6 categories: Anxiety, Joy, Destiny, Wisdom, Identity, Confidence. Whatever you're walking through, there's a declaration for it.",
+    title: "BIBLE CHAT",
+    desc: "Ask anything and get answers rooted in Scripture. Like having a wise friend in the Word, any hour of the day.",
+    detail: "Anxiety, relationships, doubt, marriage, forgiveness — bring it at 3am and get a warm, Scripture-rooted answer in seconds.",
   },
   {
     n: "04",
-    title: "CREATE YOUR OWN",
-    desc: "New content is constantly being added. Plus you have the ability to write your own personalized affirmations to further engage in the power of God's Word.",
-    detail: "Your story, your words, rooted in His truth. Write declarations that speak directly to your situation.",
+    title: "AUDIO DEVOTIONALS",
+    desc: "Short audio you can listen to or speak along with — built for morning routines, commutes and quiet moments.",
+    detail: "Three to five minutes. About the length of one song in the car.",
   },
   {
     n: "05",
-    title: "DAILY REMINDERS",
-    desc: "Consistent daily practice is where transformation happens. SpeakLife sends gentle push notifications to keep you anchored to your morning routine.",
-    detail: "The most powerful declarations are the ones you actually speak. We help make sure you don't miss a day.",
+    title: "STREAKS & STRENGTH SCORE",
+    desc: "Consistency is where transformation happens, so SpeakLife makes it visible. Your streak tracks the days you showed up.",
+    detail: "A 0–100 Spiritual Strength score built from how often you complete your Daily Burst.",
   },
   {
     n: "06",
+    title: "CREATE YOUR OWN",
+    desc: "Write your own declarations, in your own words, rooted in His truth — then have them sent back to you through the day.",
+    detail: "Your story, your words. For the situation no preset category quite names.",
+  },
+  {
+    n: "07",
+    title: "THEMES",
+    desc: "Pick from a selection of fonts and backgrounds to personalise your theme, and choose which categories you see.",
+    detail: "The app should look like something you want to open every morning.",
+  },
+  {
+    n: "08",
+    title: "DAILY REMINDERS",
+    desc: "Gentle push notifications keep you anchored to your morning routine — and you choose which topics they draw from.",
+    detail: "The most powerful declarations are the ones you actually speak. We make sure you don't miss a day.",
+  },
+  {
+    n: "09",
+    title: "HOME SCREEN WIDGET",
+    desc: "Put a promise on your home screen so God's Word is the first thing you see, before the news and the notifications.",
+    detail: "No app to open. The Word is just there.",
+  },
+  {
+    n: "10",
     title: "SHARE THE WORD",
     desc: "When a declaration moves you, share it. Beautiful branded cards let you send God's Word to the people you love.",
-    detail: "Built-in sharing so every user becomes a carrier of the Word.",
+    detail: "Built-in sharing, so every user becomes a carrier of the Word.",
   },
 ];
 

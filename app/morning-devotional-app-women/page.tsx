@@ -52,7 +52,7 @@ export default function MorningDevotional() {
               { icon: "⚡", title: "2–5 minutes", desc: "Fits into any morning — even the hard ones with no time." },
               { icon: "💬", title: "Plain language", desc: "Written so you can speak with confidence, not confusion." },
               { icon: "❤️", title: "Personal tone", desc: "Feels like YOUR words, not a Sunday sermon." },
-              { icon: "🎯", title: "6 categories", desc: "Covers what Christian women actually face: anxiety, identity, purpose, confidence." },
+              { icon: "🎯", title: "50 categories", desc: "Covers what Christian women actually face: anxiety, identity, fertility, single parenting, grief, marriage." },
               { icon: "🔔", title: "Daily reminders", desc: "Push notification so you don't miss on busy days." },
               { icon: "📖", title: "Scripture-backed", desc: "Every declaration tied to a real Bible verse." },
             ].map(f => (

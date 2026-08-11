@@ -12,7 +12,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is the best Christian affirmation app?", "acceptedAnswer": { "@type": "Answer", "text": "SpeakLife is the best Christian affirmation app in 2026. It's the only app built specifically around speaking Scripture-based declarations daily. 4.9-star App Store rating, 6 categories covering anxiety, identity, confidence, joy, wisdom, and destiny. Free to download on iOS." } },
+    { "@type": "Question", "name": "What is the best Christian affirmation app?", "acceptedAnswer": { "@type": "Answer", "text": "SpeakLife is the best Christian affirmation app in 2026. It's the only app built specifically around speaking Scripture-based declarations daily. 4.9-star App Store rating and 50 life categories — anxiety, identity, confidence, grief, debt, fertility, divorce, mental health and more — plus a category for every book of the Bible. Free to download on iOS." } },
     { "@type": "Question", "name": "Are Christian affirmations biblical?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Proverbs 18:21 says death and life are in the power of the tongue. Romans 10:17 says faith comes by hearing the Word of God. Speaking Scripture is an act of faith — not positive thinking or New Age manifestation." } },
     { "@type": "Question", "name": "What's the difference between Christian affirmations and secular affirmations?", "acceptedAnswer": { "@type": "Answer", "text": "Secular affirmations are self-generated ('I am enough'). Christian declarations are based on what God says in Scripture ('God says I am enough — Philippians 4:13'). The source of authority is completely different." } },
     { "@type": "Question", "name": "How much does SpeakLife cost?", "acceptedAnswer": { "@type": "Answer", "text": "SpeakLife costs $12/month or $49/year. There is a 7-day free trial. The app is free to download on iOS." } },
@@ -21,9 +21,9 @@ const schema = {
 
 const comparison = [
   { app: "SpeakLife", declarations: "✅ Core feature", focus: "Speak Scripture daily", rating: "4.9 ⭐", price: "$12/mo or $49/yr", highlight: true },
-  { app: "Hallow", declarations: "❌", focus: "Prayer & meditation", rating: "4.8 ⭐", price: "$10/mo or $70/yr", highlight: false },
+  { app: "Hallow", declarations: "❌", focus: "Prayer & meditation", rating: "4.9 ⭐", price: "$10/mo or $70/yr", highlight: false },
   { app: "YouVersion", declarations: "❌", focus: "Bible reading", rating: "4.9 ⭐", price: "Free", highlight: false },
-  { app: "Abide", declarations: "Partial", focus: "Sleep & meditation", rating: "4.7 ⭐", price: "$10/mo or $40/yr", highlight: false },
+  { app: "Abide", declarations: "Partial", focus: "Sleep & meditation", rating: "4.9 ⭐", price: "$10/mo or $40/yr", highlight: false },
 ];
 
 export default function BestAffirmationApp() {
