@@ -30,7 +30,7 @@ const faqSchema = {
       name: "Is SpeakLife or Abide cheaper?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Abide is cheaper annually at $39.99 per year versus SpeakLife at $49 per year. SpeakLife is $12 per month and Abide is $9.99 per month. Both are free to download and both offer a free trial.",
+        text: "SpeakLife is $12 per month or $49 per year. Abide is $9.99 per month or $39.99 per year. Both are free to download and both offer a free trial. SpeakLife includes Bible Chat and seven-day Daily Burst plans, which Abide does not.",
       },
     },
     {
@@ -51,11 +51,11 @@ const data: ComparisonData = {
     "One asks you to speak. The other asks you to listen. That single difference decides which one fits you.",
   verdict: (
     <>
-      <strong>Choose SpeakLife</strong> if you want to actively declare Scripture
-      over a specific fight. <strong>Choose Abide</strong> if you want to be
-      calmed — guided meditation and Bible sleep stories. Abide is cheaper
-      annually. They aren&rsquo;t really competitors; they&rsquo;re different
-      halves of a day.
+      <strong>Choose SpeakLife</strong>{" "}if you want to actively declare Scripture
+      over a specific fight. <strong>Choose Abide</strong>{" "}if you want to be
+      calmed — guided meditation and Bible sleep stories to fall asleep to.
+      They aren&rsquo;t really competitors; they&rsquo;re different halves of
+      a day.
     </>
   ),
   rows: [
@@ -70,8 +70,8 @@ const data: ComparisonData = {
     ["Life categories", "50 + all 66 Bible books", "Themed meditation library"],
     ["Streaks & strength score", "✅", "Partial"],
     ["Monthly price", "$12/mo", "$9.99/mo"],
-    ["Annual price", "$49/yr", "$39.99/yr ✅ cheaper"],
-    ["Free trial", "7-day", "✅"],
+    ["Annual price", "$49/yr", "$39.99/yr"],
+    ["Free trial", "✅ 7-day", "✅"],
     ["App Store rating", "⭐ 4.9 (1,500+)", "⭐ 4.9 (122,000)"],
     ["Platform", "iOS", "iOS & Android"],
   ],

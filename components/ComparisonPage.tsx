@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
+import CompareCards from "@/components/CompareCards";
 
 /**
  * Shared layout for the /speaklife-vs-* comparison pages.
@@ -55,7 +56,13 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
             </div>
 
             <h2 className="mb-6 text-3xl font-black text-[#1A264D]">Full Comparison</h2>
-            <div className="mb-16 overflow-x-auto rounded-2xl border border-gray-200">
+
+            {/* Desktop: a real table. Mobile: stacked cards.
+                A 3-column table at 390px overflows its container by ~70px, so
+                the competitor column sat off-screen with no scroll affordance
+                — on a phone the comparison simply looked missing, which is
+                most of the traffic on a page whose entire job is comparing. */}
+            <div className="mb-16 hidden overflow-x-auto rounded-2xl border border-gray-200 md:block">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#1A264D] text-white">
@@ -74,6 +81,10 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            <div className="mb-16">
+              <CompareCards headers={["Feature", "SpeakLife", data.competitor]} rows={data.rows} />
             </div>
 
             <h2 className="mb-6 text-3xl font-black text-[#1A264D]">{data.coreDiffHeading}</h2>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CompareCards from "@/components/CompareCards";
 
 export const metadata: Metadata = {
   title: "SpeakLife vs Hallow: Which Christian App Is Right for You? (2026)",
@@ -13,11 +14,16 @@ const rows = [
   ["Daily time", "2–5 minutes", "10–20 minutes"],
   ["Active or passive", "Active — you speak", "Passive — you listen"],
   ["Scripture declarations", "✅ Core feature", "❌"],
+  ["AI Scripture chat", "✅ Bible Chat", "❌"],
+  ["Plan built around your fight", "✅ Daily Burst — 7 days", "Novenas & challenges"],
+  ["Life categories", "50 + all 66 Bible books", "Prayer & meditation library"],
+  ["Write your own", "✅ Your own declarations", "❌"],
+  ["Streaks & progress", "✅ + 0–100 strength score", "✅ Streaks"],
   ["Sleep content", "❌", "✅"],
   ["Celebrity voices", "❌", "✅ Mark Wahlberg, etc."],
   ["Monthly price", "$12/mo", "$10/mo"],
   ["Annual price", "$49/yr ✅ cheaper", "$70/yr"],
-  ["Free trial", "7-day", "7-day"],
+  ["Free trial", "✅ 7-day", "✅ 7-day"],
   ["App Store rating", "⭐ 4.9 (1,500+)", "⭐ 4.9 (372,000)"],
   ["Platform", "iOS", "iOS & Android"],
 ];
@@ -47,7 +53,7 @@ export default function VsHallow() {
 
             {/* Comparison table */}
             <h2 className="text-3xl font-black text-[#1A264D] mb-6">Full Comparison</h2>
-            <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-16">
+            <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-16 hidden md:block">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#1A264D] text-white">
@@ -66,6 +72,9 @@ export default function VsHallow() {
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="mb-16">
+              <CompareCards headers={["Feature", "SpeakLife", "Hallow"]} rows={rows} />
             </div>
 
             {/* Core difference */}

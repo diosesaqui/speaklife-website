@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CompareCards from "@/components/CompareCards";
 
 export const metadata: Metadata = {
   title: "SpeakLife vs YouVersion Bible App — Which Is Better?",
@@ -24,6 +25,10 @@ const rows = [
   { feature: "Session Length", speaklife: "2–5 minutes", youversion: "5–30 minutes" },
   { feature: "Daily Habit", speaklife: "Declarations + reminders", youversion: "Reading streaks" },
   { feature: "Personalization", speaklife: "Write your own declarations", youversion: "Bookmarks & highlights" },
+  { feature: "Declarations to speak", speaklife: "✅ Core feature", youversion: "❌" },
+  { feature: "Plan built around your fight", speaklife: "✅ Daily Burst — 7 days", youversion: "Reading plans" },
+  { feature: "Life categories", speaklife: "50 + all 66 Bible books", youversion: "Reading plans & verses" },
+  { feature: "Progress", speaklife: "Streaks + 0–100 strength score", youversion: "Reading streaks" },
   { feature: "Audio", speaklife: "Devotionals + declarations", youversion: "Audio Bible" },
   { feature: "Platform", speaklife: "iOS only", youversion: "iOS + Android + Web" },
   { feature: "Price", speaklife: "$12/mo or $49/yr", youversion: "Free" },
@@ -55,7 +60,7 @@ export default function VsYouVersion() {
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Side-by-Side Comparison</h2>
-          <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14">
+          <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14 hidden md:block">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-[#1A264D] text-white">
@@ -74,6 +79,9 @@ export default function VsYouVersion() {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="mb-14">
+            <CompareCards headers={["Feature", "SpeakLife", "YouVersion"]} rows={rows.map(r => [r.feature, r.speaklife, r.youversion])} />
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Reading vs Declaring — What's the Difference?</h2>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CompareCards from "@/components/CompareCards";
 
 export const metadata: Metadata = {
   title: "Best Morning Devotional App for Christian Women (2026) — SpeakLife",
@@ -17,6 +18,15 @@ const schema = {
     { "@type": "Question", "name": "What are the best faith apps for Christian women?", "acceptedAnswer": { "@type": "Answer", "text": "Top faith apps for Christian women include SpeakLife (declarations and devotionals), Hallow (prayer and meditation), YouVersion (Bible reading), and First 5 (quick daily Bible study). SpeakLife is the top choice for women who want an active Scripture-speaking practice." } },
   ]
 };
+
+const comparison = [
+
+                  { app: "SpeakLife ✅", time: "2–5 min", format: "Spoken declarations", best: "Active practice + Bible Chat", price: "$12/mo or $49/yr", h: true },
+                  { app: "First 5", time: "5 min", format: "Guided reading", best: "Quick Bible study", price: "Free", h: false },
+                  { app: "Hallow", time: "10–20 min", format: "Prayer/meditation", best: "Contemplative prayer", price: "$10/mo or $70/yr", h: false },
+                  { app: "She Reads Truth", time: "15–30 min", format: "Reading plan", best: "Deep study", price: "$9.99/mo", h: false },
+                  { app: "Abide", time: "5–10 min", format: "Guided meditation", best: "Sleep & calm", price: "$10/mo or $40/yr", h: false },
+];
 
 export default function MorningDevotional() {
   return (
@@ -64,17 +74,11 @@ export default function MorningDevotional() {
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Morning App Comparison for Women</h2>
-          <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14">
+          <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14 hidden md:block">
             <table className="w-full text-sm">
               <thead><tr className="bg-[#1A264D] text-white"><th className="text-left px-5 py-4">App</th><th className="text-left px-5 py-4">Time</th><th className="text-left px-5 py-4">Format</th><th className="text-left px-5 py-4">Best For</th><th className="text-left px-5 py-4">Price</th></tr></thead>
               <tbody>
-                {[
-                  { app: "SpeakLife ✅", time: "2–5 min", format: "Spoken declarations", best: "Active faith practice", price: "$12/mo or $49/yr", h: true },
-                  { app: "First 5", time: "5 min", format: "Guided reading", best: "Quick Bible study", price: "Free", h: false },
-                  { app: "Hallow", time: "10–20 min", format: "Prayer/meditation", best: "Contemplative prayer", price: "$10/mo or $70/yr", h: false },
-                  { app: "She Reads Truth", time: "15–30 min", format: "Reading plan", best: "Deep study", price: "$9.99/mo", h: false },
-                  { app: "Abide", time: "5–10 min", format: "Guided meditation", best: "Sleep & calm", price: "$10/mo or $40/yr", h: false },
-                ].map((r, i) => (
+                {comparison.map((r, i) => (
                   <tr key={r.app} className={r.h ? "bg-[#f0f4ff] font-semibold" : i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                     <td className="px-5 py-4 text-[#1a1a1a]">{r.app}</td>
                     <td className="px-5 py-4">{r.time}</td>
@@ -85,6 +89,13 @@ export default function MorningDevotional() {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="mb-14">
+            <CompareCards
+              highlightFirst={false}
+              headers={["App", "Time", "Format", "Best for", "Price"]}
+              rows={comparison.map(c => [c.app, c.time, c.format, c.best, c.price])}
+            />
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>What Women Are Saying</h2>

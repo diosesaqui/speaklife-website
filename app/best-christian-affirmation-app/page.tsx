@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CompareCards from "@/components/CompareCards";
 
 export const metadata: Metadata = {
   title: "Best Christian Affirmation App (2026) — SpeakLife",
@@ -20,7 +21,7 @@ const schema = {
 };
 
 const comparison = [
-  { app: "SpeakLife", declarations: "✅ Core feature", focus: "Speak Scripture daily", rating: "4.9 ⭐", price: "$12/mo or $49/yr", highlight: true },
+  { app: "SpeakLife", declarations: "✅ Core feature", focus: "Speak Scripture daily · Bible Chat · 50 categories", rating: "4.9 ⭐", price: "$12/mo or $49/yr", highlight: true },
   { app: "Hallow", declarations: "❌", focus: "Prayer & meditation", rating: "4.9 ⭐", price: "$10/mo or $70/yr", highlight: false },
   { app: "YouVersion", declarations: "❌", focus: "Bible reading", rating: "4.9 ⭐", price: "Free", highlight: false },
   { app: "Abide", declarations: "Partial", focus: "Sleep & meditation", rating: "4.9 ⭐", price: "$10/mo or $40/yr", highlight: false },
@@ -52,7 +53,7 @@ export default function BestAffirmationApp() {
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Top Christian Affirmation Apps Compared</h2>
-          <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14">
+          <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14 hidden md:block">
             <table className="w-full text-sm">
               <thead><tr className="bg-[#1A264D] text-white"><th className="text-left px-5 py-4">App</th><th className="text-left px-5 py-4">Declarations</th><th className="text-left px-5 py-4">Focus</th><th className="text-left px-5 py-4">Rating</th><th className="text-left px-5 py-4">Price</th></tr></thead>
               <tbody>
@@ -67,6 +68,13 @@ export default function BestAffirmationApp() {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="mb-14">
+            <CompareCards
+              highlightFirst={false}
+              headers={["App", "Declarations", "Focus", "Rating", "Price"]}
+              rows={comparison.map(a => [a.app, a.declarations, a.focus, a.rating, a.price])}
+            />
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Why SpeakLife Is #1</h2>
