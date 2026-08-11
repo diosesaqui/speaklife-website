@@ -46,8 +46,8 @@ export default function ConfidenceDeclarations() {
         </section>
 
         <section className="py-20 px-6 max-w-4xl mx-auto">
-          <div className="bg-[#f0f4ff] border-l-4 border-[#0a1f1f] p-6 rounded-r-2xl mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1f1f] mb-2">Key Verse</p>
+          <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Key Verse</p>
             <p className="text-[#1a1a1a] font-medium leading-relaxed italic">"For God has not given us a spirit of fear, but of power and of love and of a sound mind." — <strong>2 Timothy 1:7</strong></p>
           </div>
 
@@ -58,7 +58,7 @@ export default function ConfidenceDeclarations() {
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>6 Declarations to Speak for Confidence</h2>
           <div className="grid md:grid-cols-2 gap-5 mb-14">
             {declarations.map(d => (
-              <div key={d.ref} className="card-hover bg-[#0a1f1f] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
+              <div key={d.ref} className="card-hover bg-[#1A264D] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
                 <p className="text-white/90 italic text-sm leading-relaxed mb-4">"{d.text}"</p>
                 <p className="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{d.ref}</p>
               </div>
@@ -73,7 +73,7 @@ export default function ConfidenceDeclarations() {
               { n: "03", t: "Personalize them", d: "Swap 'I' for your name. 'God did not give [your name] a spirit of fear.' More specific = more powerful." },
               { n: "04", t: "Repeat the ones that resist", d: "The declarations that feel hardest to believe are usually the ones you need most. Speak those again." },
             ].map(s => (
-              <div key={s.n} className="flex gap-5 p-5 bg-[#f7f8f7] rounded-xl border border-gray-100">
+              <div key={s.n} className="flex gap-5 p-5 bg-[#f4f6fb] rounded-xl border border-gray-100">
                 <div className="text-3xl font-black text-gray-100 flex-shrink-0" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{s.n}</div>
                 <div><div className="font-bold text-[#1a1a1a] text-sm mb-1">{s.t}</div><div className="text-gray-500 text-sm leading-relaxed">{s.d}</div></div>
               </div>
@@ -91,7 +91,7 @@ export default function ConfidenceDeclarations() {
           </div>
 
           <div className="text-sm text-gray-400">
-            See also: <Link href="/christian-app-for-anxiety" className="underline hover:text-[#0a1f1f]">Christian app for anxiety</Link> · <Link href="/bible-affirmations-for-women" className="underline hover:text-[#0a1f1f]">Bible affirmations for women</Link> · <Link href="/declarations" className="underline hover:text-[#0a1f1f]">What are Christian declarations?</Link>
+            See also: <Link href="/christian-app-for-anxiety" className="underline hover:text-[#1A264D]">Christian app for anxiety</Link> · <Link href="/bible-affirmations-for-women" className="underline hover:text-[#1A264D]">Bible affirmations for women</Link> · <Link href="/declarations" className="underline hover:text-[#1A264D]">What are Christian declarations?</Link>
           </div>
         </section>
 

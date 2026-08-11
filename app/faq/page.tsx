@@ -43,7 +43,7 @@ export default function FAQ() {
             <div className="divide-y divide-gray-100">
               {faqs.map((faq) => (
                 <div key={faq.q} className="py-7">
-                  <h3 className="font-bold text-[#1a2744] text-lg mb-3">{faq.q}</h3>
+                  <h3 className="font-bold text-[#1A264D] text-lg mb-3">{faq.q}</h3>
                   <p className="text-gray-500 leading-relaxed">{faq.a}</p>
                 </div>
               ))}
@@ -51,10 +51,10 @@ export default function FAQ() {
           </div>
         </section>
 
-        <section className="py-20 px-6 bg-[#1a2744] text-center">
+        <section className="py-20 px-6 bg-[#1A264D] text-center">
           <h2 className="text-3xl font-black text-white mb-4">Ready to Start?</h2>
           <p className="text-white/70 mb-8">Download SpeakLife free. 3-day trial on annual plan.</p>
-          <a href="https://apps.apple.com/us/app/speaklife/id1617492998" className="bg-[#c9a84c] text-[#1a2744] font-black text-lg px-10 py-4 rounded-full hover:bg-[#e8c96a] transition-all">
+          <a href="https://apps.apple.com/us/app/speaklife/id1617492998" className="bg-[#c9a84c] text-[#1A264D] font-black text-lg px-10 py-4 rounded-full hover:bg-[#e8c96a] transition-all">
             Download Free on iOS →
           </a>
         </section>

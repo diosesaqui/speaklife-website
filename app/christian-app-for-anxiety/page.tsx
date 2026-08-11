@@ -45,8 +45,8 @@ export default function AnxietyApp() {
         </section>
 
         <section className="py-20 px-6 max-w-4xl mx-auto">
-          <div className="bg-[#f0f4ff] border-l-4 border-[#0a1f1f] p-6 rounded-r-2xl mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1f1f] mb-2">Direct Answer</p>
+          <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Direct Answer</p>
             <p className="text-[#1a1a1a] font-medium leading-relaxed"><strong>SpeakLife</strong> is the best Christian app for anxiety. It has a dedicated Anxiety category with Scripture-based declarations rooted in Philippians 4:6-7, Isaiah 41:10, and 1 Peter 5:7. Speak them each morning to interrupt the anxiety cycle with God's truth. 4.9 stars. Free on iOS.</p>
           </div>
 
@@ -57,7 +57,7 @@ export default function AnxietyApp() {
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Sample Anxiety Declarations from SpeakLife</h2>
           <div className="grid md:grid-cols-2 gap-5 mb-14">
             {declarations.map(d => (
-              <div key={d.ref} className="bg-[#0a1f1f] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
+              <div key={d.ref} className="bg-[#1A264D] rounded-2xl p-6 border-t-2 border-t-[#c9a84c]">
                 <p className="text-white/90 italic text-sm leading-relaxed mb-4">"{d.text}"</p>
                 <p className="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{d.ref}</p>
               </div>
@@ -72,7 +72,7 @@ export default function AnxietyApp() {
               { v: "1 Peter 5:7", t: "Cast all your anxiety on him because he cares for you." },
               { v: "Matthew 6:34", t: "Do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own." },
             ].map(v => (
-              <div key={v.v} className="flex gap-4 p-5 bg-[#f7f8f7] rounded-xl border border-gray-100">
+              <div key={v.v} className="flex gap-4 p-5 bg-[#f4f6fb] rounded-xl border border-gray-100">
                 <div className="text-[#c9a84c] font-bold text-xs tracking-widest uppercase flex-shrink-0 mt-1 w-28">{v.v}</div>
                 <p className="text-gray-600 text-sm leading-relaxed italic">"{v.t}"</p>
               </div>
@@ -90,7 +90,7 @@ export default function AnxietyApp() {
           </div>
 
           <div className="text-sm text-gray-400">
-            See also: <Link href="/declarations" className="underline hover:text-[#0a1f1f]">What are Christian declarations?</Link> · <Link href="/best-christian-affirmation-app" className="underline hover:text-[#0a1f1f]">Best Christian affirmation app</Link> · <Link href="/scripture-declarations-for-confidence" className="underline hover:text-[#0a1f1f]">Declarations for confidence</Link>
+            See also: <Link href="/declarations" className="underline hover:text-[#1A264D]">What are Christian declarations?</Link> · <Link href="/best-christian-affirmation-app" className="underline hover:text-[#1A264D]">Best Christian affirmation app</Link> · <Link href="/scripture-declarations-for-confidence" className="underline hover:text-[#1A264D]">Declarations for confidence</Link>
           </div>
         </section>
 

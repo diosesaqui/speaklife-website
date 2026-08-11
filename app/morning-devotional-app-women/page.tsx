@@ -37,8 +37,8 @@ export default function MorningDevotional() {
         </section>
 
         <section className="py-20 px-6 max-w-4xl mx-auto">
-          <div className="bg-[#f0f4ff] border-l-4 border-[#0a1f1f] p-6 rounded-r-2xl mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1f1f] mb-2">Direct Answer</p>
+          <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Direct Answer</p>
             <p className="text-[#1a1a1a] font-medium leading-relaxed"><strong>SpeakLife</strong> is the best morning devotional app for Christian women. Built around 2–5 minute Scripture declarations, designed for busy women, 4.9 stars on the App Store. Free on iOS.</p>
           </div>
 
@@ -56,7 +56,7 @@ export default function MorningDevotional() {
               { icon: "🔔", title: "Daily reminders", desc: "Push notification so you don't miss on busy days." },
               { icon: "📖", title: "Scripture-backed", desc: "Every declaration tied to a real Bible verse." },
             ].map(f => (
-              <div key={f.title} className="card-hover flex gap-4 p-5 bg-[#f7f8f7] rounded-xl border border-gray-100">
+              <div key={f.title} className="card-hover flex gap-4 p-5 bg-[#f4f6fb] rounded-xl border border-gray-100">
                 <div className="text-2xl flex-shrink-0">{f.icon}</div>
                 <div><div className="font-bold text-[#1a1a1a] text-sm mb-1">{f.title}</div><div className="text-gray-500 text-sm">{f.desc}</div></div>
               </div>
@@ -66,7 +66,7 @@ export default function MorningDevotional() {
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Morning App Comparison for Women</h2>
           <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14">
             <table className="w-full text-sm">
-              <thead><tr className="bg-[#0a1f1f] text-white"><th className="text-left px-5 py-4">App</th><th className="text-left px-5 py-4">Time</th><th className="text-left px-5 py-4">Format</th><th className="text-left px-5 py-4">Best For</th><th className="text-left px-5 py-4">Price</th></tr></thead>
+              <thead><tr className="bg-[#1A264D] text-white"><th className="text-left px-5 py-4">App</th><th className="text-left px-5 py-4">Time</th><th className="text-left px-5 py-4">Format</th><th className="text-left px-5 py-4">Best For</th><th className="text-left px-5 py-4">Price</th></tr></thead>
               <tbody>
                 {[
                   { app: "SpeakLife ✅", time: "2–5 min", format: "Spoken declarations", best: "Active faith practice", price: "$10/mo or $50/yr", h: true },
@@ -111,7 +111,7 @@ export default function MorningDevotional() {
           </div>
 
           <div className="text-sm text-gray-400">
-            See also: <Link href="/best-christian-affirmation-app" className="underline hover:text-[#0a1f1f]">Best Christian affirmation app</Link> · <Link href="/declarations" className="underline hover:text-[#0a1f1f]">What are declarations?</Link> · <Link href="/speaklife-vs-hallow" className="underline hover:text-[#0a1f1f]">SpeakLife vs Hallow</Link>
+            See also: <Link href="/best-christian-affirmation-app" className="underline hover:text-[#1A264D]">Best Christian affirmation app</Link> · <Link href="/declarations" className="underline hover:text-[#1A264D]">What are declarations?</Link> · <Link href="/speaklife-vs-hallow" className="underline hover:text-[#1A264D]">SpeakLife vs Hallow</Link>
           </div>
         </section>
 

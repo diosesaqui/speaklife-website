@@ -49,8 +49,8 @@ export default function VsYouVersion() {
         </section>
 
         <section className="py-20 px-6 max-w-4xl mx-auto">
-          <div className="bg-[#f0f4ff] border-l-4 border-[#0a1f1f] p-6 rounded-r-2xl mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1f1f] mb-2">Bottom Line</p>
+          <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Bottom Line</p>
             <p className="text-[#1a1a1a] font-medium leading-relaxed"><strong>YouVersion</strong> helps you read and study the Bible. <strong>SpeakLife</strong> helps you speak it over your life. They are complementary, not competing — but if you want a daily active faith practice, SpeakLife wins.</p>
           </div>
 
@@ -58,7 +58,7 @@ export default function VsYouVersion() {
           <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-14">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#0a1f1f] text-white">
+                <tr className="bg-[#1A264D] text-white">
                   <th className="text-left px-5 py-4">Feature</th>
                   <th className="text-left px-5 py-4">SpeakLife ✅</th>
                   <th className="text-left px-5 py-4">YouVersion</th>
@@ -78,12 +78,12 @@ export default function VsYouVersion() {
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Reading vs Declaring — What's the Difference?</h2>
           <div className="grid md:grid-cols-2 gap-6 mb-14">
-            <div className="bg-[#f7f8f7] rounded-2xl p-7 border border-gray-100">
+            <div className="bg-[#f4f6fb] rounded-2xl p-7 border border-gray-100">
               <h3 className="font-bold text-[#1a1a1a] text-sm uppercase tracking-wide mb-3">YouVersion Approach</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-3">Open the Bible, follow a reading plan, highlight verses, take notes. Excellent for study, knowledge, and understanding context. 500M+ users worldwide.</p>
               <p className="text-gray-400 text-xs">Best for: Bible study, reading plans, devotional content</p>
             </div>
-            <div className="bg-[#0a1f1f] rounded-2xl p-7 border-t-2 border-t-[#c9a84c]">
+            <div className="bg-[#1A264D] rounded-2xl p-7 border-t-2 border-t-[#c9a84c]">
               <h3 className="font-bold text-white text-sm uppercase tracking-wide mb-3">SpeakLife Approach</h3>
               <p className="text-white/70 text-sm leading-relaxed mb-3">Open the app, speak declarations out loud over your day. Romans 10:17 — "faith comes by hearing." When you hear your own voice declare Scripture, it activates differently than reading it silently.</p>
               <p className="text-[#c9a84c] text-xs">Best for: Daily declarations, identity, anxiety, confidence</p>
@@ -106,7 +106,7 @@ export default function VsYouVersion() {
           </div>
 
           <div className="text-sm text-gray-400">
-            See also: <Link href="/speaklife-vs-hallow" className="underline hover:text-[#0a1f1f]">SpeakLife vs Hallow</Link> · <Link href="/best-christian-affirmation-app" className="underline hover:text-[#0a1f1f]">Best Christian affirmation app</Link> · <Link href="/declarations" className="underline hover:text-[#0a1f1f]">What are declarations?</Link>
+            See also: <Link href="/speaklife-vs-hallow" className="underline hover:text-[#1A264D]">SpeakLife vs Hallow</Link> · <Link href="/best-christian-affirmation-app" className="underline hover:text-[#1A264D]">Best Christian affirmation app</Link> · <Link href="/declarations" className="underline hover:text-[#1A264D]">What are declarations?</Link>
           </div>
         </section>
 

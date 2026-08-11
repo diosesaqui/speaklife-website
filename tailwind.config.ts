@@ -9,7 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        teal: { dark: "#0a1f1f", mid: "#0f2a28", light: "#1a3a36" },
+        // SLBlue, from the iOS app's Constants.SLBlue
+        slblue: {
+          DEFAULT: "#1A264D",
+          deep: "#111B3A",
+          darkest: "#0B1226",
+          lift: "#26356B",
+        },
         gold: { DEFAULT: "#c9a84c", light: "#e8c96a" },
       },
     },

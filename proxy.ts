@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const response = NextResponse.next()
 
-  // A/B test only on homepage
+  // A/B test only on the homepage. Only headline/hero/CTA/offer tests are
+  // worth running — they win ~24% of the time vs <6% for cosmetic changes.
   if (request.nextUrl.pathname === '/') {
     let variant = request.cookies.get('ab-hero')?.value
 
