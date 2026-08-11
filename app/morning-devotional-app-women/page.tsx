@@ -69,11 +69,11 @@ export default function MorningDevotional() {
               <thead><tr className="bg-[#1A264D] text-white"><th className="text-left px-5 py-4">App</th><th className="text-left px-5 py-4">Time</th><th className="text-left px-5 py-4">Format</th><th className="text-left px-5 py-4">Best For</th><th className="text-left px-5 py-4">Price</th></tr></thead>
               <tbody>
                 {[
-                  { app: "SpeakLife ✅", time: "2–5 min", format: "Spoken declarations", best: "Active faith practice", price: "$10/mo or $50/yr", h: true },
+                  { app: "SpeakLife ✅", time: "2–5 min", format: "Spoken declarations", best: "Active faith practice", price: "$12/mo or $49/yr", h: true },
                   { app: "First 5", time: "5 min", format: "Guided reading", best: "Quick Bible study", price: "Free", h: false },
                   { app: "Hallow", time: "10–20 min", format: "Prayer/meditation", best: "Contemplative prayer", price: "$10/mo or $70/yr", h: false },
                   { app: "She Reads Truth", time: "15–30 min", format: "Reading plan", best: "Deep study", price: "$9.99/mo", h: false },
-                  { app: "Abide", time: "5–10 min", format: "Guided meditation", best: "Sleep & calm", price: "$10/mo or $60/yr", h: false },
+                  { app: "Abide", time: "5–10 min", format: "Guided meditation", best: "Sleep & calm", price: "$10/mo or $40/yr", h: false },
                 ].map((r, i) => (
                   <tr key={r.app} className={r.h ? "bg-[#f0f4ff] font-semibold" : i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                     <td className="px-5 py-4 text-[#1a1a1a]">{r.app}</td>
@@ -118,7 +118,7 @@ export default function MorningDevotional() {
         <section className="hero-water py-20 px-6 text-center relative">
           <div className="relative z-10">
             <h2 className="text-white mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, textTransform: "uppercase" }}>Start Your Morning Practice</h2>
-            <p className="text-white/60 mb-8 text-sm">Free download · 3-day trial · 2 minutes a day</p>
+            <p className="text-white/60 mb-8 text-sm">Free download · 7-day trial · 2 minutes a day</p>
             <a href="https://apps.apple.com/us/app/speaklife/id1617492998" target="_blank" rel="noopener noreferrer" className="inline-flex bg-black text-white items-center gap-3 px-7 py-3.5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
               <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               <div className="text-left"><div className="text-xs text-white/60 leading-none">Download on the</div><div className="text-base font-semibold leading-tight">App Store</div></div>

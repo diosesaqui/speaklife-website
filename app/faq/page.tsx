@@ -13,8 +13,8 @@ const faqs = [
   { q: "What are Christian declarations?", a: "Declarations are Scripture-based statements you speak aloud over your life. Rooted in Proverbs 18:21 ('death and life are in the power of the tongue') and Romans 10:17 ('faith comes by hearing'). When you speak God's Word, faith activates." },
   { q: "Are declarations biblical?", a: "Yes. Proverbs 18:21, Romans 10:17, Joshua 1:8, and Hebrews 10:23 all support speaking God's Word. This is not positive thinking — it's faith in action." },
   { q: "Is speaking declarations the same as manifestation?", a: "No. New Age manifestation says you create your own reality. Christian declarations agree with what God has already declared in Scripture. The authority is His Word, not your belief in yourself." },
-  { q: "Is SpeakLife free?", a: "Free to download. 3-day free trial on the annual plan. After trial: $10/month or $50/year." },
-  { q: "How much does SpeakLife cost?", a: "$10/month or $50/year. Annual works out to less than $5/month — the cost of one coffee." },
+  { q: "Is SpeakLife free?", a: "Free to download. 7-day free trial. After trial: $12/month or $49/year. Cancel any time from your App Store settings." },
+  { q: "How much does SpeakLife cost?", a: "$12/month or $49/year. Annual works out to about $4/month — the cost of one coffee." },
   { q: "What categories does SpeakLife cover?", a: "Anxiety, Joy, Destiny, Wisdom, Identity, Confidence — every major area of your life covered by God's Word." },
   { q: "How long does it take each day?", a: "2–5 minutes. Designed to fit into a morning routine, not consume it." },
   { q: "Can I create my own declarations?", a: "Yes. SpeakLife lets you write your own personalized declarations on top of the built-in library." },
@@ -53,7 +53,7 @@ export default function FAQ() {
 
         <section className="py-20 px-6 bg-[#1A264D] text-center">
           <h2 className="text-3xl font-black text-white mb-4">Ready to Start?</h2>
-          <p className="text-white/70 mb-8">Download SpeakLife free. 3-day trial on annual plan.</p>
+          <p className="text-white/70 mb-8">Download SpeakLife free. 7-day trial.</p>
           <a href="https://apps.apple.com/us/app/speaklife/id1617492998" className="bg-[#c9a84c] text-[#1A264D] font-black text-lg px-10 py-4 rounded-full hover:bg-[#e8c96a] transition-all">
             Download Free on iOS →
           </a>
