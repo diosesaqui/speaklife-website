@@ -32,7 +32,12 @@ Inflated `aggregateRating` in structured data is a Google rich-results violation
 
 1. **Never invent testimonials.** Use verbatim App Store reviews with real usernames. A previous build shipped three fabricated ones ("Sarah M.", "Keisha T.", "Rachel D.").
 2. **The founder's own App Store reviews (`Franchiz.king`, `King.Franchiz`) must never run as customer testimonials** — FTC endorsement disclosure. The Bell's palsy story (2020) runs as a clearly labelled founder story instead.
-3. **Never invent URLs**, especially social handles. If a link is unknown, leave it out and ask.
+3. **Never invent URLs.** The confirmed social handles are:
+   TikTok `@speaklife.app` · Instagram `speaklifeapp` · Facebook
+   `Speaklife.bibleapp`. Do not change these without asking — an earlier pass
+   removed a working Instagram link on the assumption it was a placeholder.
+   Note the iOS app links to `instagram.com/speaklife.affirmationsapp`, which
+   is a different account; the website uses `speaklifeapp`.
 4. **A claim on one page is on all of them.** Trial length, price and rating appear across the homepage, `/faq`, and the AEO pages. Grep the whole repo before declaring a fix done — some live inside FAQPage JSON-LD, where Google can surface a wrong number as a rich result.
 5. **Verify competitor pricing before publishing it.** Hallow $9.99/mo · $69.99/yr. Abide $9.99/mo · $39.99/yr (was wrongly listed as $60/yr). `She Reads Truth $9.99/mo` is still unverified.
 6. **No fake urgency**, no countdown timers. The brand promise is peace.
