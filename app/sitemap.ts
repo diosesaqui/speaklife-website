@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/speaklife-vs-pray", priority: 0.8 },
     { url: "/speaklife-vs-haven", priority: 0.8 },
     { url: "/faq", priority: 0.8 },
+    { url: "/audit", priority: 0.8 },
     { url: "/features", priority: 0.7 },
     { url: "/privacy", priority: 0.5 },
   ];
