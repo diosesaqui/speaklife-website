@@ -243,7 +243,7 @@ export default function AuditFlow() {
         </span>
       </div>
 
-      <div key={step} className="audit-step flex flex-1 flex-col">
+      <div key={step} className="audit-step sm:mt-[6vh]">
         <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold/80">The Storm Audit</p>
         <h1
           ref={headingRef}
@@ -252,7 +252,7 @@ export default function AuditFlow() {
         >
           {heading}
         </h1>
-        <div className="mt-auto pt-6">{body}</div>
+        <div className="mt-7">{body}</div>
       </div>
     </div>
   );
@@ -306,7 +306,7 @@ function OwnWords({ initial, onDone }: { initial: string; onDone: (text: string)
       className="flex flex-col gap-3"
     >
       <label htmlFor="own-words" className="text-sm text-white/60">
-        One line. Optional. Only you and your plan will see it.
+        One line. Optional. We will quote it back to you in your results.
       </label>
       <input
         id="own-words"
