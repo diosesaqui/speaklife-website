@@ -47,14 +47,16 @@ test("branching storms need Q1b, and a wrong-branch substorm does not resolve", 
 });
 
 const values = (opts) => opts.map((o) => o.value);
+// Every routing outcome, with that storm's own Q7 voices.
 function* allAnswers() {
-  for (const duration of values(m.DURATIONS))
-    for (const response of values(m.RESPONSES))
-      for (const spoken of values(m.SPOKEN))
-        for (const first_hour of values(m.FIRST_HOURS))
-          for (const loudest of values(m.LOUDEST))
-            for (const knows_verse of values(m.KNOWS_VERSE))
-              yield { storm: "mind", duration, response, spoken, first_hour, loudest, knows_verse };
+  for (const [storm, substorm] of EXPECTED)
+    for (const duration of values(m.DURATIONS))
+      for (const response of values(m.RESPONSES))
+        for (const spoken of values(m.SPOKEN))
+          for (const first_hour of values(m.FIRST_HOURS))
+            for (const loudest of values(m.loudestOptionsFor({ storm, substorm })))
+              for (const knows_verse of values(m.KNOWS_VERSE))
+                yield { storm, substorm, duration, response, spoken, first_hour, loudest, knows_verse };
 }
 
 const ORDER = ["praying_about", "never_spoken", "dont_know", "first_hour", "never_ran_it", "other_voice"];
@@ -69,12 +71,32 @@ test("gaps: at most three, spec priority order, never padded", () => {
     assert.deepEqual(idx, [...idx].sort((x, y) => x - y), "priority order");
     assert.ok(m.isComplete(a));
   }
-  assert.equal(n, 4 * 5 * 4 * 5 * 5 * 4);
+  const voices = EXPECTED.reduce((sum, [storm, substorm]) => sum + m.loudestOptionsFor({ storm, substorm }).length, 0);
+  assert.equal(n, voices * 4 * 5 * 4 * 5 * 4);
   // Nothing triggers → nothing shown.
   assert.deepEqual(
     m.gapsFor({ response: "read_verse", spoken: "most_days", knows_verse: "one", first_hour: "worship", duration: "weeks", loudest: "gods" }),
     [],
   );
+});
+
+test("Q7 offers voices that fit each storm, always ending with My own and God's", () => {
+  for (const [storm, sub] of EXPECTED) {
+    const opts = m.loudestOptionsFor({ storm, substorm: sub });
+    const vals = opts.map((o) => o.value);
+    assert.ok(opts.length >= 4, `${storm}/${sub} has options`);
+    assert.deepEqual(vals.slice(-2), ["my_own", "gods"], `${storm}/${sub} ends with my_own, gods`);
+    assert.equal(new Set(vals).size, vals.length, `${storm}/${sub} no duplicate values`);
+  }
+  const labels = (storm, sub) => m.loudestOptionsFor({ storm, substorm: sub }).map((o) => o.label);
+  assert.ok(!labels("body").includes("The numbers"));
+  assert.ok(!labels("body").includes("What someone said about me"));
+  assert.ok(!labels("mind").includes("The diagnosis, or the report"));
+  // A voice from another storm no longer counts as answered.
+  const a = { storm: "body", duration: "years", response: "nothing", spoken: "never", first_hour: "phone", loudest: "numbers", knows_verse: "no" };
+  assert.equal(m.isStepAnswered("q7", a), false);
+  assert.equal(m.isComplete(a), false);
+  assert.equal(m.isStepAnswered("q7", { ...a, loudest: "symptoms" }), true);
 });
 
 test("method label follows §5a", () => {

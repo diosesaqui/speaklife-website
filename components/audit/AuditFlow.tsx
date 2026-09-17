@@ -11,6 +11,7 @@ import {
   Q2_QUESTION,
   STORMS,
   SUBSTORMS,
+  choiceOptions,
   gapsFor,
   isStepAnswered,
   methodFor,
@@ -137,6 +138,8 @@ export default function AuditFlow() {
     const nextAnswers = { ...answers, ...patch };
     // Changing Q1 invalidates a Q1b answer from the other branch.
     if (patch.storm && patch.storm !== answers.storm) delete nextAnswers.substorm;
+    // Q7's options depend on the storm, so drop a voice the new storm doesn't offer.
+    if (nextAnswers.loudest && !isStepAnswered("q7", nextAnswers)) delete nextAnswers.loudest;
     update({ ...session, answers: nextAnswers });
     track({ event: "audit_question_answered", properties: { question, value } });
     setTimeout(() => {
@@ -205,7 +208,7 @@ export default function AuditFlow() {
     heading = q.question;
     body = (
       <Choices
-        options={q.options}
+        options={choiceOptions(step, answers)}
         selected={answers[q.key]}
         onPick={(v) => answer({ [q.key]: v } as Answers, step, v)}
       />

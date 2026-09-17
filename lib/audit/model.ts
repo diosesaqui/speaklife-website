@@ -41,7 +41,21 @@ export type Duration = "weeks" | "months" | "year" | "years";
 export type Response = "pray_about" | "read_verse" | "distract" | "tell_someone" | "nothing";
 export type Spoken = "never" | "once_twice" | "sometimes" | "most_days";
 export type FirstHour = "phone" | "news" | "silence" | "worship" | "the_word";
-export type Loudest = "diagnosis" | "numbers" | "someone_said" | "my_own" | "gods";
+export type Loudest =
+  | "diagnosis"
+  | "numbers"
+  | "someone_said"
+  | "my_own"
+  | "gods"
+  // Added beyond the spec so every storm gets voices that fit it. Scoring
+  // only asks whether the answer is "gods", so none of these change a result.
+  | "symptoms"
+  | "feed"
+  | "comparison"
+  | "expectations"
+  | "regret"
+  | "heaviness"
+  | "circumstances";
 export type KnowsVerse = "no" | "one" | "a_few" | "several";
 export type Method = "Reader" | "Asker" | "Speaker";
 
@@ -161,13 +175,67 @@ export const FIRST_HOURS: Option<FirstHour>[] = [
   { value: "the_word", label: "God's Word" },
 ];
 
-export const LOUDEST: Option<Loudest>[] = [
-  { value: "diagnosis", label: "The diagnosis, or the report" },
-  { value: "numbers", label: "The numbers" },
-  { value: "someone_said", label: "What someone said about me" },
-  { value: "my_own", label: "My own" },
-  { value: "gods", label: "God's" },
-];
+// Q7 options depend on the storm. The spec's single list offered "The
+// numbers" to someone whose storm is their body. Every list ends with the
+// same two voices, so the one question the scoring asks (is it God's?) is
+// always answerable.
+const MY_OWN: Option<Loudest> = { value: "my_own", label: "My own" };
+const GODS: Option<Loudest> = { value: "gods", label: "God's" };
+const FEED: Option<Loudest> = { value: "feed", label: "The news, or my feed" };
+const COMPARISON: Option<Loudest> = { value: "comparison", label: "Comparing myself to other people" };
+
+export const LOUDEST_BY_STORM: Record<Exclude<Storm, "heart" | "people"> | Substorm, Option<Loudest>[]> = {
+  mind: [FEED, { value: "someone_said", label: "What someone said to me" }, MY_OWN, GODS],
+  body: [
+    { value: "diagnosis", label: "The diagnosis, or the report" },
+    { value: "symptoms", label: "What my body is telling me" },
+    MY_OWN,
+    GODS,
+  ],
+  money: [{ value: "numbers", label: "The numbers" }, FEED, MY_OWN, GODS],
+  self: [{ value: "someone_said", label: "What someone said about me" }, COMPARISON, MY_OWN, GODS],
+  calling: [{ value: "expectations", label: "What other people expect of me" }, COMPARISON, MY_OWN, GODS],
+  all: [
+    { value: "diagnosis", label: "The diagnosis, or the report" },
+    { value: "numbers", label: "The numbers" },
+    { value: "someone_said", label: "What someone said about me" },
+    FEED,
+    MY_OWN,
+    GODS,
+  ],
+  loss: [
+    { value: "regret", label: "What I wish I had done" },
+    { value: "someone_said", label: "What people tell me I should feel" },
+    MY_OWN,
+    GODS,
+  ],
+  flat: [{ value: "heaviness", label: "The heaviness itself" }, FEED, MY_OWN, GODS],
+  spouse: [
+    { value: "someone_said", label: "What my spouse says" },
+    { value: "circumstances", label: "The fights, or the silence" },
+    MY_OWN,
+    GODS,
+  ],
+  child: [
+    { value: "circumstances", label: "What my kids are going through" },
+    { value: "someone_said", label: "What other people say about my kids" },
+    MY_OWN,
+    GODS,
+  ],
+  prodigal: [
+    { value: "circumstances", label: "The choices they are making" },
+    { value: "someone_said", label: "What they say about God" },
+    MY_OWN,
+    GODS,
+  ],
+};
+
+/** Q7 options for the storm answered in Q1 (and Q1b). */
+export function loudestOptionsFor(a: Answers): Option<Loudest>[] {
+  const route = resolveRoute(a.storm, a.substorm);
+  if (!route) return LOUDEST_BY_STORM.all;
+  return LOUDEST_BY_STORM[(route.substorm ?? route.storm) as keyof typeof LOUDEST_BY_STORM];
+}
 
 export const KNOWS_VERSE: Option<KnowsVerse>[] = [
   { value: "no", label: "No" },
@@ -182,18 +250,26 @@ export type StepId = "q1" | "q1b" | "q2" | "q3" | "q4" | "q5" | "q6" | "q7" | "q
 
 export type ChoiceKey = "duration" | "response" | "spoken" | "first_hour" | "loudest" | "knows_verse";
 
-export const CHOICE_STEPS: Record<Exclude<StepId, "q1" | "q1b" | "q2" | "email">, { key: ChoiceKey; question: string; options: Option<string>[] }> = {
+export const CHOICE_STEPS: Record<
+  Exclude<StepId, "q1" | "q1b" | "q2" | "email">,
+  { key: ChoiceKey; question: string; options: Option<string>[] | ((a: Answers) => Option<string>[]) }
+> = {
   q3: { key: "duration", question: "How long has it been like this?", options: DURATIONS },
   q4: { key: "response", question: "When it hits, what do you do?", options: RESPONSES },
   q5: { key: "spoken", question: "Have you ever said God's Word out loud over this, by name?", options: SPOKEN },
   q6: { key: "first_hour", question: "What does the first hour of your day sound like?", options: FIRST_HOURS },
-  q7: { key: "loudest", question: "Whose voice do you hear about this most?", options: LOUDEST },
+  q7: { key: "loudest", question: "Whose voice do you hear about this most?", options: loudestOptionsFor },
   q8: { key: "knows_verse", question: "Do you know a verse that speaks to this exact thing?", options: KNOWS_VERSE },
 };
 
 export const Q1_QUESTION = "What is heaviest right now?";
 export const Q2_QUESTION = "Say it in your own words.";
 export const EMAIL_QUESTION = "Where should we send your plan?";
+
+export function choiceOptions(step: keyof typeof CHOICE_STEPS, a: Answers): Option<string>[] {
+  const { options } = CHOICE_STEPS[step];
+  return typeof options === "function" ? options(a) : options;
+}
 
 /** Nine screens for most people, ten for the heart and people branches. */
 export function stepsFor(answers: Answers): StepId[] {
@@ -210,7 +286,11 @@ export function isStepAnswered(step: StepId, a: Answers): boolean {
     case "q1b": return !!resolveRoute(a.storm, a.substorm);
     case "q2": return true;
     case "email": return false;
-    default: return !!a[CHOICE_STEPS[step].key];
+    default: {
+      // An answer only counts if it is still offered (Q7 depends on Q1).
+      const value = a[CHOICE_STEPS[step].key];
+      return !!value && choiceOptions(step, a).some((o) => o.value === value);
+    }
   }
 }
 
