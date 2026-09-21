@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
@@ -143,7 +144,9 @@ const appSchema = {
   "@type": "SoftwareApplication",
   name: "SpeakLife: Pray Like Jesus",
   operatingSystem: "iOS 17.0 or later",
-  applicationCategory: "LifestyleApplication",
+  // App Store primary genre is Health & Fitness; HealthApplication is the
+  // schema.org/Google value for it ("HealthFitnessApplication" is not valid).
+  applicationCategory: "HealthApplication",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   aggregateRating: {
     "@type": "AggregateRating",
@@ -224,8 +227,9 @@ export default async function Home() {
 
                 <div className="animate-fade-up delay-3 mt-9 flex flex-col items-center gap-4 md:items-start">
                   <DownloadButton position="web-hero" className="w-full sm:w-auto" />
-                  <p className="text-sm text-white/40">
-                    7 days free · Cancel any time · No payment due now
+                  <p className="max-w-sm text-center text-sm text-white/50 md:text-left">
+                    Not sure? Try it free. If you don’t love it in your first
+                    week, cancel and you won’t be charged.
                   </p>
                 </div>
 
@@ -433,6 +437,42 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* ═══ WARRIOR ROOM ════════════════════════════════════════════
+            Copy is limited to the live App Store listing, verbatim: "Join
+            believers declaring daily. Share breakthroughs. Stand together."
+            Do not add member counts, chat/DM or moderation claims.
+            Text-only on purpose: there is no Warrior Room screenshot yet.
+            TODO: add a real one at public/screenshots/warrior-room.webp and
+            render it with <AppScreen /> like #rhythm does — never stand in
+            an unrelated screenshot.
+            ═════════════════════════════════════════════════════════════ */}
+        <section id="warrior-room" className="bg-white px-5 py-24 md:py-32">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#1A264D]/35">
+              The Warrior Room
+            </p>
+            <h2 className="serif-display text-balance text-3xl font-bold leading-tight text-[#1A264D] md:text-5xl">
+              Declare with other believers.
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#1A264D]/60">
+              You don’t have to hold the line alone. In the Warrior Room, believers
+              declare the truth every day, share their breakthroughs, and stand
+              together.
+            </p>
+
+            <div className="mx-auto mt-12 grid max-w-2xl gap-4 sm:grid-cols-3">
+              {["Declare daily", "Share breakthroughs", "Stand together"].map((x) => (
+                <div
+                  key={x}
+                  className="rounded-2xl border border-[#1A264D]/[0.08] bg-[#f4f6fb] px-5 py-6"
+                >
+                  <div className="serif-display text-lg font-bold text-[#1A264D]">{x}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ═══ COVERAGE ═══════════════════════════════════════════════
             Was "Six storms. Hundreds of promises." — carried over from the
             old site, which claimed 6 categories. The app actually ships 50
@@ -523,6 +563,15 @@ export default async function Home() {
             </h2>
           </div>
           <FAQ />
+          {/* Privacy is a trust objection; answer it here rather than only in
+              the footer. Wording matches /privacy: the app collects no
+              personal data, so there is nothing to sell. */}
+          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-[#1A264D]/60">
+            We don’t collect or sell your personal data.{" "}
+            <Link href="/privacy" className="font-semibold text-[#1A264D] underline underline-offset-4 hover:text-gold">
+              Here’s exactly what we store
+            </Link>
+          </p>
         </section>
 
         {/* ═══ FINAL CTA ════════════════════════════════════════════════ */}

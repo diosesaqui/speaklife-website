@@ -31,6 +31,14 @@ export const FAQ_ITEMS = [
     a: "Most apps give you something to read. SpeakLife gives you something to say. It runs on one mechanic — Reject the Lie, Declare the Truth (2 Corinthians 10:5) — so instead of just learning more about God’s Word, you use it against the specific thing you’re facing today.",
   },
   {
+    q: "Is Bible Chat really based on Scripture?",
+    a: "Bible Chat is built to answer from the Bible, not from opinion. Ask about anxiety, marriage, forgiveness or doubt and you get a Scripture-rooted answer with the verses behind it, plus a declaration to speak over your situation. Treat it the way the Bereans treated Paul (Acts 17:11): open your Bible and check. It’s there to get you into the Word, not to replace it.",
+  },
+  {
+    q: "How do you make sure the content is right?",
+    a: "Every declaration is tied to a specific verse, and the verse is always shown next to it, so nothing asks you to take our word for it. If you ever spot a mistake — a wrong reference, a typo — tell us and we’ll fix it.",
+  },
+  {
     q: "What devices does it work on?",
     a: "SpeakLife is on iPhone and iPad, and it needs iOS 17 or later. On a computer, scan the QR code on this page with your phone camera to install it in a few seconds.",
   },

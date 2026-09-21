@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Features — SpeakLife | Christian Declaration App",
-  description: "Everything in SpeakLife — Daily Burst 7-day plans, Bible Chat, 50 life categories, audio devotionals, streaks, custom declarations, widgets and reminders.",
+  description: "Everything in SpeakLife — Daily Burst 7-day plans, Bible Chat, 50 life categories, audio devotionals, streaks, the Warrior Room, your personal library, custom declarations, widgets and reminders.",
 };
 
 /* Rewritten against the shipped app. The old list predated Bible Chat, the
@@ -70,6 +70,20 @@ const features = [
     title: "SHARE THE WORD",
     desc: "When a declaration moves you, share it. Beautiful branded cards let you send God's Word to the people you love.",
     detail: "Built-in sharing, so every user becomes a carrier of the Word.",
+  },
+  /* 11 and 12 are held to the live App Store listing wording. Don't add
+     member counts, chat/DM or moderation claims to the Warrior Room. */
+  {
+    n: "11",
+    title: "WARRIOR ROOM",
+    desc: "Join believers declaring daily. Share your breakthroughs, and stand together with people speaking the same truth.",
+    detail: "You don't have to hold the line alone.",
+  },
+  {
+    n: "12",
+    title: "PERSONAL LIBRARY",
+    desc: "Save the declarations that speak to you, so the words that carried you through one storm are ready for the next.",
+    detail: "Your favourites sit alongside your streak, so you can see the ground you've taken.",
   },
 ];
 
