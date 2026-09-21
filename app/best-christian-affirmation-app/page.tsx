@@ -6,7 +6,7 @@ import CompareCards from "@/components/CompareCards";
 
 export const metadata: Metadata = {
   title: "Best Christian Affirmation App (2026) — SpeakLife",
-  description: "SpeakLife is the best Christian affirmation app — Scripture-based declarations, 4.9 stars, 6 faith categories. Free download on iOS.",
+  description: "SpeakLife is the best Christian affirmation app — Scripture-based declarations, 4.9 stars, 50 life categories. Free download on iOS.",
 };
 
 const schema = {
@@ -49,7 +49,7 @@ export default function BestAffirmationApp() {
           {/* Answer box */}
           <div className="bg-[#f0f4ff] border-l-4 border-[#1A264D] p-6 rounded-r-2xl mb-14">
             <p className="text-xs font-bold uppercase tracking-widest text-[#1A264D] mb-2">Direct Answer</p>
-            <p className="text-[#1a1a1a] font-medium leading-relaxed"><strong>SpeakLife</strong> is the best Christian affirmation app in 2026. It's the only app built specifically around speaking Scripture-based declarations daily — not just reading or listening. 4.9-star App Store rating, 6 faith categories, free on iOS.</p>
+            <p className="text-[#1a1a1a] font-medium leading-relaxed"><strong>SpeakLife</strong> is the best Christian affirmation app in 2026. It's the only app built specifically around speaking Scripture-based declarations daily — not just reading or listening. 4.9-star App Store rating, 50 life categories, free on iOS.</p>
           </div>
 
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Top Christian Affirmation Apps Compared</h2>

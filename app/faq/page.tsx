@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { FAQ_ITEMS } from "@/lib/faq";
 
 export const metadata: Metadata = {
   title: "SpeakLife FAQ — Everything You Need to Know",
@@ -23,6 +24,8 @@ const faqs = [
   { q: "How is SpeakLife different from YouVersion?", a: "YouVersion is for reading the Bible. SpeakLife is for speaking it. Both valuable — different practices. Many people use both." },
   { q: "How is SpeakLife different from Hallow?", a: "Hallow is Catholic-rooted and focused on guided prayer and meditation. SpeakLife is non-denominational and focused on active Scripture declarations. SpeakLife is also $20/year cheaper on annual." },
   { q: "What is SpeakLife's App Store rating?", a: "4.9 stars." },
+  // Trust objections — shared with the homepage so the wording can't drift.
+  ...FAQ_ITEMS.filter((f) => /Bible Chat really|content is right/.test(f.q)),
 ];
 
 export default function FAQ() {
