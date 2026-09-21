@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { href: "/faq", label: "FAQ" },
 ] as const;
 
-const MOBILE_CTA_LABEL = "Start 7 Days Free";
+const CTA_LABEL = "Start 7 Days Free";
 
 /**
  * Minimal header.
@@ -27,7 +27,7 @@ const MOBILE_CTA_LABEL = "Start 7 Days Free";
  *
  * The panel closes on link selection, Escape, and route change.
  *
- * On desktop it becomes solid on scroll and keeps "Start Free" reachable —
+ * On desktop it becomes solid on scroll and keeps "Start 7 Days Free" reachable —
  * same label as every other button on the page, so clicks aggregate to one
  * metric instead of fragmenting.
  */
@@ -93,14 +93,14 @@ export default function Header() {
           href={appStoreUrl("web-nav")}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => track("cta_click", { position: "web-nav", label: "Start Free" })}
+          onClick={() => track("cta_click", { position: "web-nav", label: CTA_LABEL })}
           className={`hidden items-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all md:inline-flex ${
             scrolled
               ? "bg-gold text-[#1A264D] hover:bg-gold-light"
               : "bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
           }`}
         >
-          Start Free
+          {CTA_LABEL}
         </a>
 
         <button
@@ -158,12 +158,12 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
-              track("cta_click", { position: "web-nav", label: MOBILE_CTA_LABEL });
+              track("cta_click", { position: "web-nav", label: CTA_LABEL });
               close();
             }}
             className="mt-4 flex min-h-12 items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-[#1A264D] transition-colors hover:bg-gold-light"
           >
-            {MOBILE_CTA_LABEL}
+            {CTA_LABEL}
           </a>
         </nav>
       </div>
