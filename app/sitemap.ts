@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/", priority: 1.0 },
     { url: "/best-christian-affirmation-app", priority: 0.9 },
     { url: "/declarations", priority: 0.9 },
+    { url: "/30-day-guide", priority: 0.9 },
     { url: "/morning-devotional-app-women", priority: 0.9 },
     { url: "/christian-app-for-anxiety", priority: 0.9 },
     { url: "/bible-affirmations-for-women", priority: 0.9 },

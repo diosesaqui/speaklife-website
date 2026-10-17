@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/features", label: "Features" },
   { href: "/declarations", label: "Declarations" },
   { href: "/faq", label: "FAQ" },
+  { href: "/30-day-guide", label: "30-Day Guide" },
 ] as const;
 
 const CTA_LABEL = "Start 7 Days Free";
